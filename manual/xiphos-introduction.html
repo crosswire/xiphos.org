@@ -1,0 +1,295 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb">
+<head>
+<title>Xiphos -- Open Source Bible Study Software
+1. Introduction
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="../media/images/favicon.ico" />
+<!-- Will create separate css file later? -->
+<style type="text/css">
+html{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	margin: 0px 0px 0px 245px;
+	padding: 0px;
+	background-color: #369;
+	color: white;
+	font-family: Georgia, serif;
+	background-image: url(../media/images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: 245px 0px;
+}
+div#footer{
+	margin-top: 120px;
+	padding: 10px;
+	border-top: 1px solid white;
+	text-align: center;
+}
+div#content{
+	padding-left: 30px;
+	padding-right: 20px;
+}
+div#side{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+a{
+	color: #CCF;
+}
+a img{
+	border: 0;
+}
+hr{
+	height: 1px;
+	color: #CCF;
+	background-color: #CCF;
+	border: 0px solid #CCF;
+}
+img.photo{
+	border: 10px solid white;
+}
+div.menu{
+	background-color: #147;
+	border-bottom: 1px solid white;
+}
+div.menu h1{
+	margin: 0px;
+	float: left;
+	padding-left: 20px;
+}
+ul.menu{
+	margin: 0px;
+	padding: 10px;
+	display: block;
+	text-align: right;
+}
+ul.menu li{
+	display: inline;
+	padding: 10px;
+}
+a.menu{
+	text-decoration: none;
+	font-weight: bold;
+}
+a.menu:hover{
+	color: white;
+	text-decoration: underline;
+}
+span.last_modified{
+	color: #CCF;
+}
+#download_button{
+background-image: url(../media/images/147-369-50.gif); background-repeat: repeat-x; background-color: #369; background-position: top; color: white; border: 1px solid #FFF; width: 30%; text-align: center; padding: 20px 0px; width:100%; margin-bottom: 20px;
+}
+#download_button a{
+font-size: 150%; font-weight: bold
+}
+#button_and_screenshot{
+float: right;
+width: 409px;
+padding: 0px 0px 20px 20px;
+}
+
+#manual_toc{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 5px; 
+	border: 1px solid #CCF; 
+	width: 220px;
+	margin: 7px 20px 20px 7px;
+}
+#manual_content{
+/*margin-left: 23%;*/
+}
+#manual_toc ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+#manual_toc li{
+	padding: 3px;
+	margin: 0px;
+}
+#manual_toc li.even{
+	background-color: #258;
+}
+#manual_toc li.odd{
+	background-color: #369;
+}
+.guisubmenu{
+	font-weight: bold;
+}
+.guimenuitem{
+	font-weight: bold;
+	font-style: italic;
+}
+.application{
+	font-weight: bold;
+	font-style: italic;
+}
+.command{
+	font-family: courier;
+	font-weight: bold;
+}
+.interface{
+	font-weight: bold;
+	font-style: italic;
+}
+div.titlepage{
+	margin-top: 50px;
+}
+div.figure{
+	border: 1px solid #CCF; /*#58B;*/
+	padding: 5px;
+}
+div.tip, div.warning{
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	padding: 5px;
+	padding-left: 90px;	
+	border: 3px solid #147;
+	background-color: #258;
+
+}
+div.tip h3, div.warning h3{
+	display: none;
+}
+div.tip{
+	background-image: url(../media/images/info.png);
+}
+div.warning{
+	background-image: url(../media/images/important.png);
+}
+h3.title{
+	background-color: #CCF;
+	padding: 5px;
+	color: #369;
+}
+div.authorgroup{
+	padding-left: 20px;
+}
+h4{
+	border-bottom: 1px solid #CCF;
+}
+div#manual_html_link{
+	background-color: #258;
+	padding: 5px;
+	margin: 5px 0px;
+}
+
+</style>
+</head>
+<body>
+<div id="side"><img src="../media/images/side.jpg" alt="Xiphos Bible" /></div>
+<div class="menu">
+<h1>Xiphos</h1>
+<ul class="menu">
+<li class="menu"><a class="menu" href="../index.html">Home</a></li> <li class="menu"><a class="menu" href="../about/index.html">About</a></li> <li class="menu"><a class="menu" href="../download/index.html">Download</a></li> <li class="menu"><a class="menu" href="../help/index.html">Help</a></li> <li class="menu"><a class="menu" href="https://xiphos.org/manual/">Documentation</a></li> <li class="menu"><a class="menu" href="../development/index.html">Development</a></li> <li class="menu"><a class="menu" href="../links/index.html">Links</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<div id="content">
+
+<div id="manual_toc">
+<a href="../index.html"><img src="../media/images/xiphos_200.png" alt="Xiphos Logo"></a><br />
+<ul>
+
+<li class="odd"><a href="index.html">Xiphos Manual</a></li>
+
+<li class="even"><a href="xiphos-introduction.html">1. Introduction</a></li>
+
+<li class="odd"><a href="familiar.html">2. Getting Started with Xiphos</a></li>
+
+<li class="even"><a href="interface.html">3. Interface</a></li>
+
+<li class="odd"><a href="preferences.html">4. Preferences</a></li>
+
+<li class="even"><a href="module-manager.html">5. Module Manager</a></li>
+
+<li class="odd"><a href="search.html">6. The Search Function</a></li>
+
+<li class="even"><a href="studypad.html">7. The Studypad</a></li>
+
+<li class="odd"><a href="personal.html">8. The Personal Commentary</a></li>
+
+<li class="even"><a href="journals.html">9. Journals and Prayer Lists</a></li>
+
+<li class="odd"><a href="onlinehelp.html">10. Getting Help Online</a></li>
+
+<li class="even"><a href="originallanguage.html">11. Original Language Research</a></li>
+
+</ul>
+<div id="manual_html_link">
+<a href="https://xiphos.org/media/manual/en-gb/index.html">Manual as a single HTML page</a>
+</div>
+
+<div style="background-color: #CCF; color: red; padding: 5px; border: 1px solid red; margin: 5px 0px;">
+Sorry, the manual is not currently translated into Unknown. You have been redirected to the  English version. 
+</div>
+
+<form action="https://xiphos.org/i18n/setlang/" method="post">
+<input name="next" type="hidden" value="." />
+<select name="language">
+
+<option value="fr" >French (fr)</option>
+
+<option value="en" selected="selected">English (en)</option>
+
+<option value="fa" >Persian (fa)</option>
+
+</select>
+<input type="submit" value="Go" />
+</form>
+</div>
+<div id="manual_content">
+<hr />
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">1. Introduction</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="index.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="familiar.html">Next</a></td></tr></table><hr /></div><div class="sect1" title="1. Introduction"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="xiphos-introduction"></a>1. Introduction</h2></div></div></div><p><span class="application">Xiphos</span> is a Bible study and research tool based upon the "SWORD Project" libraries
+
+    and the GTK libraries. You can use <span class="application">Xiphos</span> to do the following:</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>View your favorite Scripture verse</p></li><li class="listitem"><p>Make sermon or personal notes on selected passages</p></li><li class="listitem"><p>Automatically follow Bible footnotes and cross-references</p></li><li class="listitem"><p>Compare translations in parallel</p></li><li class="listitem"><p>Work in original language study using the available Hebrew and Greek
+
+           translations</p></li></ul></div><p><span class="application">Xiphos</span> aims to provide a simple and clean user interface while providing a
+
+      powerful tool allowing a personalized Bible study environment.</p><div class="figure"><a id="sword-logo"></a><p class="title"><strong>Figure 1. The SWORD Project logo</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../media/manual/en/figures/sword3.png" alt="The SWORD Project logo" /></div></div></div></div><br class="figure-break" /><p>"The SWORD Project" is based at <a class="ulink" href="https://www.crosswire.org" target="_top">http://www.crosswire.org</a>.  Other
+
+      applications under the same banner are <span class="application">MacSword</span> for the Macintosh, <span class="application">BibleDesktop</span>,
+
+      a Java application, <span class="application">BibleTime</span> (another Linux program), and <span class="application">The SWORD Project for
+
+      Windows</span> (aka <span class="application">BibleCS</span> or <span class="application">WinSword</span>).</p><p>
+
+      </p><div class="figure"><a id="main-screenshot"></a><p class="title"><strong>Figure 2. Xiphos in action</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../media/manual/en/figures/interface.png" alt="Xiphos in action" /></div></div></div></div><div class="warning" title="Warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p><span class="application">Xiphos</span> is currently in development, so this manual may not
+
+         reflect the program as you see it. If it does not, please file a
+
+         bug at the <a class="ulink" href="https://sourceforge.net/projects/xiphos" target="_top">
+
+	 project website</a>, or email <code class="email">&lt;<a class="email" href="../cdn-cgi/l/email-protection.html#88f0e1f8e0e7fba5ecedfeede4e7f8edfafbc8e4e1fbfcfba6fbe7fdfaebedeee7faefeda6e6edfc"><span class="__cf_email__" data-cfemail="93ebfae3fbfce0bef7f6e5f6fffce3f6e1e0d3fffae0e7e0bde0fce6e1f0f6f5fce1f4f6bdfdf6e7">[email&#160;protected]</span></a>&gt;</code>.
+
+         All help is appreciated, as it will improve the software.</p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="index.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="familiar.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"><span class="application">Xiphos</span> Manual </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 2. Getting Started with Xiphos</td></tr></table></div>
+</div>
+
+</div>
+<div id="footer">
+
+
+Copyright © 2000-2020, The Xiphos Developer Team
+</div>
+
+<!-- Piwik -->
+
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.xiphos.org/" : "http://piwik.xiphos.org/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">piwik_log('', 1, pkBaseURL + "piwik.php");</script>
+
+<!-- End Piwik Tag -->
+</body>
+</html>
+
+

@@ -1,0 +1,417 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb">
+<head>
+<title>Xiphos -- Open Source Bible Study Software
+4. Preferences
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="../media/images/favicon.ico" />
+<!-- Will create separate css file later? -->
+<style type="text/css">
+html{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	margin: 0px 0px 0px 245px;
+	padding: 0px;
+	background-color: #369;
+	color: white;
+	font-family: Georgia, serif;
+	background-image: url(../media/images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: 245px 0px;
+}
+div#footer{
+	margin-top: 120px;
+	padding: 10px;
+	border-top: 1px solid white;
+	text-align: center;
+}
+div#content{
+	padding-left: 30px;
+	padding-right: 20px;
+}
+div#side{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+a{
+	color: #CCF;
+}
+a img{
+	border: 0;
+}
+hr{
+	height: 1px;
+	color: #CCF;
+	background-color: #CCF;
+	border: 0px solid #CCF;
+}
+img.photo{
+	border: 10px solid white;
+}
+div.menu{
+	background-color: #147;
+	border-bottom: 1px solid white;
+}
+div.menu h1{
+	margin: 0px;
+	float: left;
+	padding-left: 20px;
+}
+ul.menu{
+	margin: 0px;
+	padding: 10px;
+	display: block;
+	text-align: right;
+}
+ul.menu li{
+	display: inline;
+	padding: 10px;
+}
+a.menu{
+	text-decoration: none;
+	font-weight: bold;
+}
+a.menu:hover{
+	color: white;
+	text-decoration: underline;
+}
+span.last_modified{
+	color: #CCF;
+}
+#download_button{
+background-image: url(../media/images/147-369-50.gif); background-repeat: repeat-x; background-color: #369; background-position: top; color: white; border: 1px solid #FFF; width: 30%; text-align: center; padding: 20px 0px; width:100%; margin-bottom: 20px;
+}
+#download_button a{
+font-size: 150%; font-weight: bold
+}
+#button_and_screenshot{
+float: right;
+width: 409px;
+padding: 0px 0px 20px 20px;
+}
+
+#manual_toc{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 5px; 
+	border: 1px solid #CCF; 
+	width: 220px;
+	margin: 7px 20px 20px 7px;
+}
+#manual_content{
+/*margin-left: 23%;*/
+}
+#manual_toc ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+#manual_toc li{
+	padding: 3px;
+	margin: 0px;
+}
+#manual_toc li.even{
+	background-color: #258;
+}
+#manual_toc li.odd{
+	background-color: #369;
+}
+.guisubmenu{
+	font-weight: bold;
+}
+.guimenuitem{
+	font-weight: bold;
+	font-style: italic;
+}
+.application{
+	font-weight: bold;
+	font-style: italic;
+}
+.command{
+	font-family: courier;
+	font-weight: bold;
+}
+.interface{
+	font-weight: bold;
+	font-style: italic;
+}
+div.titlepage{
+	margin-top: 50px;
+}
+div.figure{
+	border: 1px solid #CCF; /*#58B;*/
+	padding: 5px;
+}
+div.tip, div.warning{
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	padding: 5px;
+	padding-left: 90px;	
+	border: 3px solid #147;
+	background-color: #258;
+
+}
+div.tip h3, div.warning h3{
+	display: none;
+}
+div.tip{
+	background-image: url(../media/images/info.png);
+}
+div.warning{
+	background-image: url(../media/images/important.png);
+}
+h3.title{
+	background-color: #CCF;
+	padding: 5px;
+	color: #369;
+}
+div.authorgroup{
+	padding-left: 20px;
+}
+h4{
+	border-bottom: 1px solid #CCF;
+}
+div#manual_html_link{
+	background-color: #258;
+	padding: 5px;
+	margin: 5px 0px;
+}
+
+</style>
+</head>
+<body>
+<div id="side"><img src="../media/images/side.jpg" alt="Xiphos Bible" /></div>
+<div class="menu">
+<h1>Xiphos</h1>
+<ul class="menu">
+<li class="menu"><a class="menu" href="../index.html">Home</a></li> <li class="menu"><a class="menu" href="../about/index.html">About</a></li> <li class="menu"><a class="menu" href="../download/index.html">Download</a></li> <li class="menu"><a class="menu" href="../help/index.html">Help</a></li> <li class="menu"><a class="menu" href="https://xiphos.org/manual/">Documentation</a></li> <li class="menu"><a class="menu" href="../development/index.html">Development</a></li> <li class="menu"><a class="menu" href="../links/index.html">Links</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<div id="content">
+
+<div id="manual_toc">
+<a href="../index.html"><img src="../media/images/xiphos_200.png" alt="Xiphos Logo"></a><br />
+<ul>
+
+<li class="odd"><a href="index.html">Xiphos Manual</a></li>
+
+<li class="even"><a href="xiphos-introduction.html">1. Introduction</a></li>
+
+<li class="odd"><a href="familiar.html">2. Getting Started with Xiphos</a></li>
+
+<li class="even"><a href="interface.html">3. Interface</a></li>
+
+<li class="odd"><a href="preferences.html">4. Preferences</a></li>
+
+<li class="even"><a href="module-manager.html">5. Module Manager</a></li>
+
+<li class="odd"><a href="search.html">6. The Search Function</a></li>
+
+<li class="even"><a href="studypad.html">7. The Studypad</a></li>
+
+<li class="odd"><a href="personal.html">8. The Personal Commentary</a></li>
+
+<li class="even"><a href="journals.html">9. Journals and Prayer Lists</a></li>
+
+<li class="odd"><a href="onlinehelp.html">10. Getting Help Online</a></li>
+
+<li class="even"><a href="originallanguage.html">11. Original Language Research</a></li>
+
+</ul>
+<div id="manual_html_link">
+<a href="https://xiphos.org/media/manual/en-gb/index.html">Manual as a single HTML page</a>
+</div>
+
+<div style="background-color: #CCF; color: red; padding: 5px; border: 1px solid red; margin: 5px 0px;">
+Sorry, the manual is not currently translated into Unknown. You have been redirected to the  English version. 
+</div>
+
+<form action="https://xiphos.org/i18n/setlang/" method="post">
+<input name="next" type="hidden" value="." />
+<select name="language">
+
+<option value="fr" >French (fr)</option>
+
+<option value="en" selected="selected">English (en)</option>
+
+<option value="fa" >Persian (fa)</option>
+
+</select>
+<input type="submit" value="Go" />
+</form>
+</div>
+<div id="manual_content">
+<hr />
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4. Preferences</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="interface.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="module-manager.html">Next</a></td></tr></table><hr /></div><div class="sect1" title="4. Preferences"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="preferences"></a>4. Preferences</h2></div></div></div><div class="toc"><dl><dt><span class="sect2"><a href="preferences.html#preferences-introduction">4.1. Introduction To Preferences</a></span></dt><dt><span class="sect2"><a href="preferences.html#general-settings">4.2. General Settings</a></span></dt><dt><span class="sect2"><a href="preferences.html#biblesync">4.3. BibleSync Settings</a></span></dt><dt><span class="sect2"><a href="preferences.html#fonts-and-colors">4.4. Fonts And Colors</a></span></dt><dt><span class="sect2"><a href="preferences.html#module-settings">4.5. Module Settings</a></span></dt></dl></div><div class="sect2" title="4.1. Introduction To Preferences"><div class="titlepage"><div><div><h3 class="title"><a id="preferences-introduction"></a>4.1. Introduction To Preferences</h3></div></div></div><div class="figure"><a id="idp3885680"></a><p class="title"><strong>Figure 17. The Preference Dialog</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../media/manual/en/figures/preferences.png" alt="The Preferences Dialog" /></div></div></div></div><br class="figure-break" /></div><div class="sect2" title="4.2. General Settings"><div class="titlepage"><div><div><h3 class="title"><a id="general-settings"></a>4.2. General Settings</h3></div></div></div><div class="toc"><dl><dt><span class="sect3"><a href="preferences.html#tab-pane2">4.2.1. Locale, General Preferences and StudyPad directory</a></span></dt></dl></div><div class="sect3" title="4.2.1. Locale, General Preferences and StudyPad directory"><div class="titlepage"><div><div><h4 class="title"><a id="tab-pane2"></a>4.2.1. Locale, General Preferences and StudyPad directory</h4></div></div></div><div class="figure"><a id="idp3926112"></a><p class="title"><strong>Figure 18. Locale, General Preferences and StudyPad directory</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../media/manual/en/figures/preferences_general-misc.png" alt="General Preferences and StudyPad directory" /></div></div></div></div><br class="figure-break" /><p>
+
+                If you wish <span class="application">Xiphos</span> to display its interface in a language other than the default, you may select
+
+                one here.  A restart will be required, so that the locale can be initialized.
+
+		</p><p>
+
+                If you enable <span class="guilabel">Default Dictionary</span>, then that named dictionary (see <span class="guimenuitem">Special</span>
+
+                below) module will always be used when double-clicking a word anywhere in <span class="application">Xiphos</span>.
+
+		</p><p>
+
+		Certain dictionary-style modules are <span class="guilabel">Daily Devotionals</span> whose keys are numerically in the form "Month.Day".  If you have
+
+		such a module installed and it has been selected as your preferred devotional, then you can ask that <span class="application">Xiphos</span>
+
+		display today's selection during startup.
+
+		</p><p>
+
+		If you enable <span class="guilabel">Resize images</span>, <span class="application">Xiphos</span> will automatically resize image
+
+		content in commentaries, general books, and dictionaries so as to fit the subwindow which contains them.
+
+		</p><p>
+
+		<span class="guilabel">Highlight current verse</span>, if enabled, will cause <span class="application">Xiphos</span> to substitute
+
+		mere current verse colorization with a high-contrast alternate color scheme on the current verse.  The colors used may be
+
+		chosen from the color selector pane (see below).
+
+		</p><p>
+
+                <span class="guilabel">Highlight user annotations</span> uses inverted highlight color choices when marking user-annotated
+
+                verses.
+
+		</p><p>
+
+                By default, <span class="guilabel">Cross-references</span> go into the Previewer.  Selecting this checkbox puts them into the verse
+
+                list instead.
+
+		</p><p>
+
+                Verse number display can be offset in several ways provided by the checkboxes.
+
+		</p></div></div><div class="sect2" title="4.3. BibleSync Settings"><div class="titlepage"><div><div><h3 class="title"><a id="biblesync"></a>4.3. BibleSync Settings</h3></div></div></div><div class="toc"><dl><dt><span class="sect3"><a href="preferences.html#tab-bsp">4.3.1. Controls for BibleSync</a></span></dt></dl></div><div class="sect3" title="4.3.1. Controls for BibleSync"><div class="titlepage"><div><div><h4 class="title"><a id="tab-bsp"></a>4.3.1. Controls for BibleSync</h4></div></div></div><div class="figure"><a id="idp3937080"></a><p class="title"><strong>Figure 19. Controls for BibleSync</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../media/manual/en/figures/preferences_general-biblesync.png" alt="BibleSync Settings" /></div></div></div></div><br class="figure-break" /><p>
+
+		BibleSync is a shared navigation protocol using LAN multicast.  It is useful for a single person when running Bible programs on
+
+		multiple machines or devices, all of which you wish to navigate through the Bible together, or for a group working closely together,
+
+		such as translators.  Also, it has a "lecture" mode, where a speaker's Bible program induces the audience's programs to follow along.
+
+		The difference in the modes regards who transmits and who receives navigation.  In Personal mode, BibleSync navigation is both
+
+		transmitted and received; as Speaker, it transmits only; as Audience, it receives only.
+
+		</p><p>
+
+		To enable BibleSync, select a mode from the radio buttons.  Also, choose whether to accept navigation directly, so that Xiphos moves
+
+		immediately to a specified verse, or whether incoming navigation is instead sent to the verse list, where you can decide whether to
+
+		follow.
+
+		</p><p>
+
+		If you use a firewall, you must punch a hole in it for UDP port 22272.
+
+		</p><p>
+
+		If you run more than one BibleSync-compatible program on your computer and do not wish your activity among them to be shared on the
+
+		local net, you can use Personal mode combined with the Private checkbox.  This will tell <span class="application">Xiphos</span> not to
+
+		broadcast outside your system.
+
+		</p><p>
+
+		You can send a verse list from the sidebar search or Advanced Search window via BibleSync; see the context (right-click) menu.  A
+
+		particularly good use case for this is when using a simpler Bible program, such as on a mobile device, with another such as
+
+		<span class="application">Xiphos</span> that has significant search capability: Do searches in <span class="application">Xiphos</span> and send
+
+		the resulting verse list to the mobile device.  Be aware that size limitations on the protocol are small, and though a search may
+
+		generate hundreds of results in the verse list, at most a few dozen will pass in the protocol to the receivers.  For
+
+		<span class="application">Xiphos</span>, receipt of multi-references always induces indirect verse list navigation.
+
+		</p><p>
+
+		<span class="application">Xiphos</span> is the first Bible program with a BibleSync implementation; as such, its utility may be limited for
+
+		now.  But a number of other programs' authors and support organizations have indicated their intention to support BibleSync as well,
+
+		including Laridian, theWord, BibleAnalyzer, and Accordance, as well as other Sword Project applications.
+
+		</p></div></div><div class="sect2" title="4.4. Fonts And Colors"><div class="titlepage"><div><div><h3 class="title"><a id="fonts-and-colors"></a>4.4. Fonts And Colors</h3></div></div></div><div class="toc"><dl><dt><span class="sect3"><a href="preferences.html#font-color">4.4.1. Setting Font Colors</a></span></dt><dt><span class="sect3"><a href="preferences.html#font-misc">4.4.2. Miscellaneous Font Settings</a></span></dt></dl></div><div class="sect3" title="4.4.1. Setting Font Colors"><div class="titlepage"><div><div><h4 class="title"><a id="font-color"></a>4.4.1. Setting Font Colors</h4></div></div></div><div class="figure"><a id="idp3945576"></a><p class="title"><strong>Figure 20. Font Colour Settings</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../media/manual/en/figures/preferences_fonts-color.png" alt="Font Colour Settings" /></div></div></div></div><br class="figure-break" /><p>
+
+		The <span class="guibutton">Invert color pairs</span> buttons are provided to make it easy, for example, to move the main window
+
+		into "night mode," with white text on black background.
+
+		</p></div><div class="sect3" title="4.4.2. Miscellaneous Font Settings"><div class="titlepage"><div><div><h4 class="title"><a id="font-misc"></a>4.4.2. Miscellaneous Font Settings</h4></div></div></div><div class="figure"><a id="idp3949360"></a><p class="title"><strong>Figure 21. Miscellaneous Font Settings</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../media/manual/en/figures/preferences_fonts-misc.png" alt="Miscellaneous Font Settings" /></div></div></div></div><br class="figure-break" /><p>
+
+		In individual modules' display, the right-click menu's <span class="guimenuitem">Module Options</span> selector provides font name
+
+		and size selection.
+
+		</p><p>
+
+		The base font size is the size initially chosen for all modules displayed by <span class="application">Xiphos</span>.  The
+
+		verse number and individual modules' font size choices are relative to the base font size.
+
+		</p><p>
+
+                The font name and size used for display is chosen from this order:
+
+		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>
+
+                                The selection made via the context menu for the specific module, under <span class="guimenuitem">Module
+
+                                Options</span>.
+
+                                </p></li><li class="listitem"><p>
+
+                                The per-language selection made under Preferences, here.
+
+                                </p></li><li class="listitem"><p>
+
+                                The module's own default selection, in its configuration file.
+
+                                </p></li><li class="listitem"><p>
+
+                                The application default.
+
+                                </p></li></ul></div></div></div><div class="sect2" title="4.5. Module Settings"><div class="titlepage"><div><div><h3 class="title"><a id="module-settings"></a>4.5. Module Settings</h3></div></div></div><div class="figure"><a id="idp3956976"></a><p class="title"><strong>Figure 22. Parallel Preferences</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../media/manual/en/figures/preferences_modules-parallel.png" alt="Parallel Preferences" /></div></div></div></div><br class="figure-break" /><div class="figure"><a id="idp3959408"></a><p class="title"><strong>Figure 23. Various preferences Modules </strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../media/manual/en/figures/preferences_modules-misc.png" alt="Various Preferences Modules" /></div></div></div></div><br class="figure-break" /></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="interface.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="module-manager.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">3. Interface </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 5. Module Manager</td></tr></table></div>
+</div>
+
+</div>
+<div id="footer">
+
+
+Copyright © 2000-2020, The Xiphos Developer Team
+</div>
+
+<!-- Piwik -->
+
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.xiphos.org/" : "http://piwik.xiphos.org/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">piwik_log('', 1, pkBaseURL + "piwik.php");</script>
+
+<!-- End Piwik Tag -->
+</body>
+</html>
+
+

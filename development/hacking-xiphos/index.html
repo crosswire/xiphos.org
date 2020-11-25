@@ -1,0 +1,164 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>Xiphos -- Open Source Bible Study Software -- Hacking Xiphos</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="../../media/images/favicon.ico" />
+<!-- Will create separate css file later? -->
+<style type="text/css">
+html{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	margin: 0px 0px 0px 245px;
+	padding: 0px;
+	background-color: #369;
+	color: white;
+	font-family: Georgia, serif;
+	background-image: url(../../media/images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: 245px 0px;
+}
+div#footer{
+	margin-top: 120px;
+	padding: 10px;
+	border-top: 1px solid white;
+	text-align: center;
+}
+div#content{
+	padding-left: 30px;
+	padding-right: 20px;
+}
+div#side{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+a{
+	color: #CCF;
+}
+a img{
+	border: 0;
+}
+hr{
+	height: 1px;
+	color: #CCF;
+	background-color: #CCF;
+	border: 0px solid #CCF;
+}
+img.photo{
+	border: 10px solid white;
+}
+div.menu{
+	background-color: #147;
+	border-bottom: 1px solid white;
+}
+div.menu h1{
+	margin: 0px;
+	float: left;
+	padding-left: 20px;
+}
+ul.menu{
+	margin: 0px;
+	padding: 10px;
+	display: block;
+	text-align: right;
+}
+ul.menu li{
+	display: inline;
+	padding: 10px;
+}
+a.menu{
+	text-decoration: none;
+	font-weight: bold;
+}
+a.menu:hover{
+	color: white;
+	text-decoration: underline;
+}
+span.last_modified{
+	color: #CCF;
+}
+#download_button{
+background-image: url(../../media/images/147-369-50.gif); background-repeat: repeat-x; background-color: #369; background-position: top; color: white; border: 1px solid #FFF; width: 30%; text-align: center; padding: 20px 0px; width:100%; margin-bottom: 20px;
+}
+#download_button a{
+font-size: 150%; font-weight: bold
+}
+#button_and_screenshot{
+float: right;
+width: 409px;
+padding: 0px 0px 20px 20px;
+}
+
+</style>
+</head>
+<body>
+<div id="side"><img src="../../media/images/side.jpg" alt="Xiphos Bible" /></div>
+<div class="menu">
+<h1>Xiphos</h1>
+<ul class="menu">
+<li class="menu"><a class="menu" href="../../index.html">Home</a></li> <li class="menu"><a class="menu" href="../../about/index.html">About</a></li> <li class="menu"><a class="menu" href="../../download/index.html">Download</a></li> <li class="menu"><a class="menu" href="../../help/index.html">Help</a></li> <li class="menu"><a class="menu" href="https://xiphos.org/manual/">Documentation</a></li> <li class="menu"><a class="menu" href="../index.html">Development</a></li> <li class="menu"><a class="menu" href="../../links/index.html">Links</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<div id="content">
+
+<h1>Hacking Xiphos</h1>
+<p>This document will hopefully give you a little overview of what you need to start hacking Xiphos and how the code is laid out. It is not an introduction how to use your shell or compiler.</p>
+<h2>Tools</h2>
+<p>You need development tools like the C and C++ compiler, make,  autoconf, automake and of course all the header files for the libraries required by Xiphos. If you run into any trouble, your system likely misses some of the required tools or header files. Make sure to have a complete installation for development. Most distributions split Gnome into packages for the normal user and packages for development, mostly recognizable with a package name ending with -devel.</p>
+<h2>Source code</h2>
+<p>If you just want to take a look at the source code, download it from the <a href="https://github.com/crosswire/xiphos">Xiphos GitHub page</a>.</p>
+<p>There you will find the latest source for the latest official release. If you have time and want to contribute to the development, you should consider using GitHub.</p>
+<h2>Retrieving source code from GitHub</h2>
+<p>One-stop retrieval of the Xiphos tree, for the current release:</p>
+<pre> git clone https://github.com/crosswire/xiphos.git </pre>
+<p>&nbsp;</p>
+<p>Get general information on git usage on your system with</p>
+<pre>    git help </pre>
+<h2>Configuration and build</h2>
+<p>From this point on, whether you use git or a tar file, we use "waf" to configure, build, and install:</p>
+<pre>    ./waf configure --prefix=/usr/local --debug-level=optimized --gtk=3 --enable-webkit2
+    ./waf build
+</pre>
+<p>If you now want to install Xiphos, you may have to become root...</p>
+<pre>    sudo ./waf install </pre>
+<p>...to let Xiphos install under /usr/local. Compile while not running as the root user, as you can screw up your whole system if something goes wrong. Use a normal user account.</p>
+<p>If you do not have root right on your system, you can configure Xiphos with another prefix. For example, your home directory is /home/user. Type...</p>
+<pre>    ./waf configure --prefix=/home/user ... </pre>
+<p>...and Xiphos can be installed in your home directory after the make process.</p>
+<h2>Hacking the code</h2>
+<p>The choice of editor or IDE you is up to you. Please read <a href="../coding-conventions.html">Coding Conventions</a> to understand indention and formatting choices.</p>
+<p>Xiphos is separated into three parts:</p>
+<ul>
+<li>main</li>
+<li>backend</li>
+<li>gnome2 + gui</li>
+</ul>
+<p>Main is the glue between backend and gnome2 + gui and contains all the code that does not belong to the others. ("gnome2" is a bit of a misnomer today, since gtk3 is current.)</p>
+<p>The backend is strictly for communicating with the sword library. It should not contain anything else.</p>
+<p>The gui with its interface to gnome is, speaking for itself, just for the gui. The aim is, to keep all gui relevant code out of main and backend, to make it possible to switch between different guis.</p>
+<p>The gui is split into the gui header files in the gui directoy which only provides the exported functions for inclusion, plus the gui C files in the gnome2 directory.</p>
+
+</div>
+<div id="footer">
+
+<span class="last_modified">Page last modified 7th April 2018 21:29 p.m. UTC</span> | 
+Copyright © 2000-2020, The Xiphos Developer Team
+</div>
+
+<!-- Piwik -->
+
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.xiphos.org/" : "http://piwik.xiphos.org/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">piwik_log('', 1, pkBaseURL + "piwik.php");</script>
+
+<!-- End Piwik Tag -->
+</body>
+</html>
+
+

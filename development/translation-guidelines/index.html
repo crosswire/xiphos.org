@@ -1,0 +1,199 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>Xiphos -- Open Source Bible Study Software -- Translation Guidelines</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="../../media/images/favicon.ico" />
+<!-- Will create separate css file later? -->
+<style type="text/css">
+html{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	margin: 0px 0px 0px 245px;
+	padding: 0px;
+	background-color: #369;
+	color: white;
+	font-family: Georgia, serif;
+	background-image: url(../../media/images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: 245px 0px;
+}
+div#footer{
+	margin-top: 120px;
+	padding: 10px;
+	border-top: 1px solid white;
+	text-align: center;
+}
+div#content{
+	padding-left: 30px;
+	padding-right: 20px;
+}
+div#side{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+a{
+	color: #CCF;
+}
+a img{
+	border: 0;
+}
+hr{
+	height: 1px;
+	color: #CCF;
+	background-color: #CCF;
+	border: 0px solid #CCF;
+}
+img.photo{
+	border: 10px solid white;
+}
+div.menu{
+	background-color: #147;
+	border-bottom: 1px solid white;
+}
+div.menu h1{
+	margin: 0px;
+	float: left;
+	padding-left: 20px;
+}
+ul.menu{
+	margin: 0px;
+	padding: 10px;
+	display: block;
+	text-align: right;
+}
+ul.menu li{
+	display: inline;
+	padding: 10px;
+}
+a.menu{
+	text-decoration: none;
+	font-weight: bold;
+}
+a.menu:hover{
+	color: white;
+	text-decoration: underline;
+}
+span.last_modified{
+	color: #CCF;
+}
+#download_button{
+background-image: url(../../media/images/147-369-50.gif); background-repeat: repeat-x; background-color: #369; background-position: top; color: white; border: 1px solid #FFF; width: 30%; text-align: center; padding: 20px 0px; width:100%; margin-bottom: 20px;
+}
+#download_button a{
+font-size: 150%; font-weight: bold
+}
+#button_and_screenshot{
+float: right;
+width: 409px;
+padding: 0px 0px 20px 20px;
+}
+
+</style>
+</head>
+<body>
+<div id="side"><img src="../../media/images/side.jpg" alt="Xiphos Bible" /></div>
+<div class="menu">
+<h1>Xiphos</h1>
+<ul class="menu">
+<li class="menu"><a class="menu" href="../../index.html">Home</a></li> <li class="menu"><a class="menu" href="../../about/index.html">About</a></li> <li class="menu"><a class="menu" href="../../download/index.html">Download</a></li> <li class="menu"><a class="menu" href="../../help/index.html">Help</a></li> <li class="menu"><a class="menu" href="https://xiphos.org/manual/">Documentation</a></li> <li class="menu"><a class="menu" href="../index.html">Development</a></li> <li class="menu"><a class="menu" href="../../links/index.html">Links</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<div id="content">
+
+<h2>Translation Guidelines</h2>
+<pre># Copyright (C) 2008 THE PACKAGE&#39;S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+
+Translating Xiphos
+
+Like all other Gnome programmes Xiphos is translated by creating a &quot;po&quot; file
+for it in the relevant language.
+
+1.) po files structure
+2.) getting ready to create/update a po file
+3.) creating a po file from scratch
+4.) updating a po file
+5.) Translators IDE
+________________________________________________________________
+
+1.) Po files are essentially text files with an entry for each string which
+requires translation. 
+
+Each entry consists of three or four parts:
+
+#: ../xiphos.desktop.in.in.h:1
+msgid &quot;Xiphos Bible Guide&quot;
+msgstr &quot;زیفوس-نرم·افزار·مطالعه·کتابمقدس&quot;
+
+A comment line pointing towards the exact origin of the particular string
+within the source code
+A msgid line which quotes the original string 
+A msgstr line which contains the relevant translation.
+
+A tranlation which is doubtful can carry a second comment line, declaring it
+as &quot;fuzzy&quot;:
+
+#: ../ui/prefs.glade.h:21
+#, fuzzy
+msgid &quot;Base text size&quot;
+msgstr &quot;سایز قلم بنیادی&quot;  
+
+2.) Before working on a po file, first you must make sure that you have
+all the current strings ready to process.  This is in the file xiphos.pot.
+It is updated by cd&#39;ing into the &quot;po&quot; directory and using
+
+intltool-update --pot
+
+It will write a file called untitled.pot.  Use this command to see if the
+new version is sane:
+
+diff -u xiphos.pot untitled.pot
+
+If it&#39;s OK, then...
+
+mv untitled.pot xiphos.pot
+
+3.) To create a new translation simply copy the file xiphos.pot to your
+working copy:
+
+cp xiphos.pot xx.po
+
+where xx stands for the relevant ISO code for your target language,
+e.g. fa.po for Farsi, de.po for German etc.
+
+4.) If you need to update your file to the newest strings you can use the
+command msgmerge:
+
+msgmerge xx.po xiphos.pot &gt; xx.po.new
+
+5.) Suitable programmes to make translation easy are 
+
+gtranslator, 
+poedit   (both on Linux)
+</pre>
+
+</div>
+<div id="footer">
+
+<span class="last_modified">Page last modified 23rd March 2015 12:01 p.m. UTC</span> | 
+Copyright © 2000-2020, The Xiphos Developer Team
+</div>
+
+<!-- Piwik -->
+
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.xiphos.org/" : "http://piwik.xiphos.org/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">piwik_log('', 1, pkBaseURL + "piwik.php");</script>
+
+<!-- End Piwik Tag -->
+</body>
+</html>
+
+

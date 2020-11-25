@@ -1,0 +1,230 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>Xiphos -- Open Source Bible Study Software -- Translation How-To</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="../../media/images/favicon.ico" />
+<!-- Will create separate css file later? -->
+<style type="text/css">
+html{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	margin: 0px 0px 0px 245px;
+	padding: 0px;
+	background-color: #369;
+	color: white;
+	font-family: Georgia, serif;
+	background-image: url(../../media/images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: 245px 0px;
+}
+div#footer{
+	margin-top: 120px;
+	padding: 10px;
+	border-top: 1px solid white;
+	text-align: center;
+}
+div#content{
+	padding-left: 30px;
+	padding-right: 20px;
+}
+div#side{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+a{
+	color: #CCF;
+}
+a img{
+	border: 0;
+}
+hr{
+	height: 1px;
+	color: #CCF;
+	background-color: #CCF;
+	border: 0px solid #CCF;
+}
+img.photo{
+	border: 10px solid white;
+}
+div.menu{
+	background-color: #147;
+	border-bottom: 1px solid white;
+}
+div.menu h1{
+	margin: 0px;
+	float: left;
+	padding-left: 20px;
+}
+ul.menu{
+	margin: 0px;
+	padding: 10px;
+	display: block;
+	text-align: right;
+}
+ul.menu li{
+	display: inline;
+	padding: 10px;
+}
+a.menu{
+	text-decoration: none;
+	font-weight: bold;
+}
+a.menu:hover{
+	color: white;
+	text-decoration: underline;
+}
+span.last_modified{
+	color: #CCF;
+}
+#download_button{
+background-image: url(../../media/images/147-369-50.gif); background-repeat: repeat-x; background-color: #369; background-position: top; color: white; border: 1px solid #FFF; width: 30%; text-align: center; padding: 20px 0px; width:100%; margin-bottom: 20px;
+}
+#download_button a{
+font-size: 150%; font-weight: bold
+}
+#button_and_screenshot{
+float: right;
+width: 409px;
+padding: 0px 0px 20px 20px;
+}
+
+</style>
+</head>
+<body>
+<div id="side"><img src="../../media/images/side.jpg" alt="Xiphos Bible" /></div>
+<div class="menu">
+<h1>Xiphos</h1>
+<ul class="menu">
+<li class="menu"><a class="menu" href="../../index.html">Home</a></li> <li class="menu"><a class="menu" href="../../about/index.html">About</a></li> <li class="menu"><a class="menu" href="../../download/index.html">Download</a></li> <li class="menu"><a class="menu" href="../../help/index.html">Help</a></li> <li class="menu"><a class="menu" href="https://xiphos.org/manual/">Documentation</a></li> <li class="menu"><a class="menu" href="../index.html">Development</a></li> <li class="menu"><a class="menu" href="../../links/index.html">Links</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<div id="content">
+
+<h2>Translation How-To</h2>
+
+<p><b>New:</b> You can try using <a href="https://translations.edge.launchpad.net/xiphos">Launchpad for translations</a> or you can use svn method below.</p>
+
+<pre>HOW TO ADD A NEW TRANSLATION TO XIPHOS
+------------------------------------------
+
+We welcome new translations, but please be aware that translations 
+are not just one time jobs. They have to be maintained in order to 
+be useful. Otherwise they quickly get outdated and become obsolete, 
+and useless. That said, we would be happy if you could maintain 
+a new documentation translation.
+
+
+Preparation
+-----------
+Make sure you have the GNU gettext package installed.
+Grab the latest versions of the source files of Xiphos in 
+Subversion :
+$ svn co https://gnomesword.svn.sourceforge.net/svnroot/gnomesword/trunk xiphos
+
+Translating Xiphos Application
+---------------------------------- 
+# The translation files are in the po/ directory
+Go to the po directory:
+$ cd po
+
+# The xiphos.pot file contains the strings to be located
+Update the pot file :
+$ intltool-update --pot
+
+# Copy the xiphos.pot file to YOUR-LANG.po file:
+YOUR-LANG = LL_CC combination.  Here `LL&#39; is an ISO 639 two-letter 
+language code, and `CC&#39; is an ISO 3166 two-letter country code.
+`LL_CC&#39; combinations can be abbreviated as `LL&#39; to denote the language&#39;s 
+main dialect  
+For example, let&#39;s suppose that you speak Portuguese, pt_BR.po is the 
+name of YOUR-LANG.po file if you live in Brazil, but pt.po if you 
+live in Portugal, 
+$ cp xiphos.pot YOUR-LANG.po
+
+# Add YOUR-LANG to the LINGUAS file:
+$ echo &quot; YOUR-LANG&quot; &gt;&gt; LINGUAS
+
+# Editing the file manually (emacs, vi, gedit) or with one of the available 
+programs for this (gtranslator, poedit, emacs po mode...), creating the 
+translation:
+$ vi YOUR-LANG.po
+
+# Check the file for errors (IMPORTANT! Don&#39;t forget this step):
+$ msgfmt -cv -o /dev/null YOUR-LANG.po
+
+# Updating the .po file is easy
+$ intltool-update YOUR-LANG.po
+
+
+You are now ready to compile Xiphos and check the result of your work.
+
+
+
+Translating Xiphos Manual
+-----------------------------
+
+# The help files are in the help/ directory
+Go to the help/ directory
+$ cd help
+
+# There is a directory per YOUR-LANG
+Create your own directory
+# mkdir YOUR-LANG
+
+# Edit Makefile.am and add YOUR-LANG to DOC_LINGUAS
+$ vi Makefile.am
+
+# Goto YOUR-LANG/ directory
+$ cd YOUR-LANG/
+
+# Generate po files. For more information on xml2po, check the output 
+of xml2po --help and man xml2po
+$ xml2po -e -o YOUR-LANG.po ../C/*xml
+
+# Editing the file manually (emacs, vi, gedit) or with one of the available 
+programs for this (gtranslator, poedit, emacs po mode...), creating the 
+translation:
+$ vi YOUR-LANG.po
+
+# You can add your localized screenshots. They go into the YOUR-LANG/figures 
+directory.
+
+# When a new version of the help file is avalaibale, it&#39;s easy to update the po file:
+$ xml2po -e -u YOUR-LANG.po ../C/*xml
+
+
+Don&#39;t forget to send YOUR-LANG.po files to <a href="../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="187f7677757d6b6f776a7c357c7d6e7d7477687d6a6b5874716b6c6b366b776d6a7b7d7e776a7f7d36767d6c36">[email&#160;protected]</a>
+
+
+&quot;..and ye shall be witnesses unto me both in Jerusalem, and in all 
+Judaea, and in Samaria, and unto the uttermost part of the earth. &quot;
+-- Acts 1:8
+
+The Xiphos Development Team
+</pre>
+
+</div>
+<div id="footer">
+
+<span class="last_modified">Page last modified 5th June 2015 12:01 p.m. UTC</span> | 
+Copyright © 2000-2020, The Xiphos Developer Team
+</div>
+
+<!-- Piwik -->
+
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.xiphos.org/" : "http://piwik.xiphos.org/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">piwik_log('', 1, pkBaseURL + "piwik.php");</script>
+
+<!-- End Piwik Tag -->
+</body>
+</html>
+
+
