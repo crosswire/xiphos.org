@@ -1,0 +1,446 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb">
+<head>
+<title>Xiphos -- Open Source Bible Study Software
+5. Module Manager
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="../../media/images/favicon.ico" />
+<!-- Will create separate css file later? -->
+<style type="text/css">
+html{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	margin: 0px 0px 0px 245px;
+	padding: 0px;
+	background-color: #369;
+	color: white;
+	font-family: Georgia, serif;
+	background-image: url(../../media/images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: 245px 0px;
+}
+div#footer{
+	margin-top: 120px;
+	padding: 10px;
+	border-top: 1px solid white;
+	text-align: center;
+}
+div#content{
+	padding-left: 30px;
+	padding-right: 20px;
+}
+div#side{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+a{
+	color: #CCF;
+}
+a img{
+	border: 0;
+}
+hr{
+	height: 1px;
+	color: #CCF;
+	background-color: #CCF;
+	border: 0px solid #CCF;
+}
+img.photo{
+	border: 10px solid white;
+}
+div.menu{
+	background-color: #147;
+	border-bottom: 1px solid white;
+}
+div.menu h1{
+	margin: 0px;
+	float: left;
+	padding-left: 20px;
+}
+ul.menu{
+	margin: 0px;
+	padding: 10px;
+	display: block;
+	text-align: right;
+}
+ul.menu li{
+	display: inline;
+	padding: 10px;
+}
+a.menu{
+	text-decoration: none;
+	font-weight: bold;
+}
+a.menu:hover{
+	color: white;
+	text-decoration: underline;
+}
+span.last_modified{
+	color: #CCF;
+}
+#download_button{
+background-image: url(../../media/images/147-369-50.gif); background-repeat: repeat-x; background-color: #369; background-position: top; color: white; border: 1px solid #FFF; width: 30%; text-align: center; padding: 20px 0px; width:100%; margin-bottom: 20px;
+}
+#download_button a{
+font-size: 150%; font-weight: bold
+}
+#button_and_screenshot{
+float: right;
+width: 409px;
+padding: 0px 0px 20px 20px;
+}
+
+#manual_toc{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 5px; 
+	border: 1px solid #CCF; 
+	width: 220px;
+	margin: 7px 20px 20px 7px;
+}
+#manual_content{
+/*margin-left: 23%;*/
+}
+#manual_toc ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+#manual_toc li{
+	padding: 3px;
+	margin: 0px;
+}
+#manual_toc li.even{
+	background-color: #258;
+}
+#manual_toc li.odd{
+	background-color: #369;
+}
+.guisubmenu{
+	font-weight: bold;
+}
+.guimenuitem{
+	font-weight: bold;
+	font-style: italic;
+}
+.application{
+	font-weight: bold;
+	font-style: italic;
+}
+.command{
+	font-family: courier;
+	font-weight: bold;
+}
+.interface{
+	font-weight: bold;
+	font-style: italic;
+}
+div.titlepage{
+	margin-top: 50px;
+}
+div.figure{
+	border: 1px solid #CCF; /*#58B;*/
+	padding: 5px;
+}
+div.tip, div.warning{
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	padding: 5px;
+	padding-left: 90px;	
+	border: 3px solid #147;
+	background-color: #258;
+
+}
+div.tip h3, div.warning h3{
+	display: none;
+}
+div.tip{
+	background-image: url(../../media/images/info.png);
+}
+div.warning{
+	background-image: url(../../media/images/important.png);
+}
+h3.title{
+	background-color: #CCF;
+	padding: 5px;
+	color: #369;
+}
+div.authorgroup{
+	padding-left: 20px;
+}
+h4{
+	border-bottom: 1px solid #CCF;
+}
+div#manual_html_link{
+	background-color: #258;
+	padding: 5px;
+	margin: 5px 0px;
+}
+
+</style>
+</head>
+<body>
+<div id="side"><img src="../../media/images/side.jpg" alt="Xiphos Bible" /></div>
+<div class="menu">
+<h1>Xiphos</h1>
+<ul class="menu">
+<li class="menu"><a class="menu" href="../../index.html">Home</a></li> <li class="menu"><a class="menu" href="../../about/index.html">About</a></li> <li class="menu"><a class="menu" href="../../download/index.html">Download</a></li> <li class="menu"><a class="menu" href="../../help/index.html">Help</a></li> <li class="menu"><a class="menu" href="https://xiphos.org/manual/">Documentation</a></li> <li class="menu"><a class="menu" href="../../development/index.html">Development</a></li> <li class="menu"><a class="menu" href="../../links/index.html">Links</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<div id="content">
+
+<div id="manual_toc">
+<a href="../../index.html"><img src="../../media/images/xiphos_200.png" alt="Xiphos Logo"></a><br />
+<ul>
+
+<li class="odd"><a href="https://xiphos.org/manual/fa/">Xiphos راهنما</a></li>
+
+<li class="even"><a href="xiphos-introduction.html">1. مقدمه</a></li>
+
+<li class="odd"><a href="familiar.html">2. شروع به استفاده از زیفوس</a></li>
+
+<li class="even"><a href="interface.html">3. محیط کاری</a></li>
+
+<li class="odd"><a href="preferences.html">4. Preferences</a></li>
+
+<li class="even"><a href="module-manager.html">5. Module Manager</a></li>
+
+<li class="odd"><a href="search.html">6. The Search Function</a></li>
+
+<li class="even"><a href="studypad.html">7. The Studypad</a></li>
+
+<li class="odd"><a href="personal.html">8. The Personal Commentary</a></li>
+
+<li class="even"><a href="journals.html">9. Journals and Prayer Lists</a></li>
+
+<li class="odd"><a href="onlinehelp.html">10. Getting Help Online</a></li>
+
+<li class="even"><a href="originallanguage.html">11. Original Language Research</a></li>
+
+</ul>
+
+<br/>
+<ul>
+
+
+<li class="odd"><a href="https://xiphos.org/manual/fr/">French</a></li>
+
+
+
+<li class="even"><a href="https://xiphos.org/manual/">English</a></li>
+
+
+
+
+</ul>
+</div>
+<div id="manual_content">
+<hr />
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5. Module Manager</th></tr><tr><td width="20%" align="right"><a accesskey="p" href="preferences.html">قبلی</a> </td><th width="60%" align="center"> </th><td width="20%" align="left"> <a accesskey="n" href="search.html">بعدی</a></td></tr></table><hr /></div><div class="sect1" title="5. Module Manager"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="module-manager"></a>5. Module Manager</h2></div></div></div><div class="toc"><dl><dt><span class="sect2"><a href="module-manager.html#module-introduction">5.1. Introduction To The Module Manager</a></span></dt><dt><span class="sect2"><a href="module-manager.html#sword-config">5.2. Sword Module Configurations</a></span></dt><dt><span class="sect2"><a href="module-manager.html#module-management">5.3. Installing, Updating, and Maintaining Modules</a></span></dt><dt><span class="sect2"><a href="module-manager.html#non-standard-modules">5.4. Installing Non-Standard Modules</a></span></dt></dl></div><div class="sect2" title="5.1. Introduction To The Module Manager"><div class="titlepage"><div><div><h3 class="title"><a id="module-introduction"></a>5.1. Introduction To The Module Manager</h3></div></div></div><p>
+
+		The "module" is the unit of content in <span class="application">Xiphos</span>, and Sword generally; a Sword module is a resource
+
+		available for viewing in Sword applications.  There are several varieties: Most importantly, Bible texts, as well as
+
+		dictionaries and lexicons, commentaries, and general books, any of which may include image content (e.g. atlases).  They are
+
+		installed either from a local directory structure (typically on removable media, such as a CDROM distribution) or remotely
+
+		via ftp from a repository such as Crosswire, which is the home of Sword, and from which all officially Sword-sanctioned
+
+		modules are available.  Also, many other modules are available from non-Crosswire repositories.  In particular, there is the
+
+		Xiphos repository, containing a variety of otherwise-unofficial modules produced primarily by contributors to
+
+		<span class="application">Xiphos</span> itself.
+
+		</p><p>
+
+		If you have other Sword applications installed, they will all share the same set of Sword modules that you install through
+
+		the Module Manager.
+
+		</p><div class="figure"><a id="idp7313104"></a><p class="title"><strong>
+
+      شكل 24. The Module Manager Dialog</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fa/figures/module.png" alt="The Module Manager Dialog" /></div></div></div></div><br class="figure-break" /><p>
+
+                Notice the <span class="guibutton">View Intro</span> button above.  You may see an introductory explanation of Module Manager
+
+                operation at any time.
+
+		</p></div><div class="sect2" title="5.2. Sword Module Configurations"><div class="titlepage"><div><div><h3 class="title"><a id="sword-config"></a>5.2. Sword Module Configurations</h3></div></div></div><div class="toc"><dl><dt><span class="sect3"><a href="module-manager.html#sword-sources">5.2.1. Module Sources Settings</a></span></dt><dt><span class="sect3"><a href="module-manager.html#installation">5.2.2. Sword Module Installations</a></span></dt></dl></div><div class="sect3" title="5.2.1. Module Sources Settings"><div class="titlepage"><div><div><h4 class="title"><a id="sword-sources"></a>5.2.1. Module Sources Settings</h4></div></div></div><div class="figure"><a id="idp7317624"></a><p class="title"><strong>
+
+      شكل 25. Module Sources Settings</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fa/figures/sword_sources.png" alt="Module Installation" /></div></div></div></div><br class="figure-break" /><p>
+
+		There are other repositories available besides CrossWire's own, though the modules available from other repositories do not
+
+		represent content officially sanctioned by Crosswire.  On the web, see this page for list of those repositories known:
+
+		<a class="ulink" href="https://www.crosswire.org/wiki/Module_Repositories" target="_top">http://www.crosswire.org/wiki/Module_Repositories</a>		
+
+		</p><p>
+
+		The list of standard repositories is maintained at CrossWire.  Xiphos normally auto-synchronizes with that list one time,
+
+		when the user first puts the Module Manager to use.  The list may change, as new repositories come into existence;
+
+		occasional re-synchronization with the list is suggested, which is accomplished by clicking <span class="guibutton">Load Standard</span>.
+
+		</p></div><div class="sect3" title="5.2.2. Sword Module Installations"><div class="titlepage"><div><div><h4 class="title"><a id="installation"></a>5.2.2. Sword Module Installations</h4></div></div></div><div class="figure"><a id="idp7322592"></a><p class="title"><strong>
+
+      شكل 26. Sword Module Installations</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fa/figures/sword_config.png" alt="Module Installation" /></div></div></div></div><br class="figure-break" /><p>
+
+			After you have selected your Install Source, click the <span class="guimenuitem">Refresh</span> button to cause
+
+			<span class="application">Xiphos</span> to find the module summary available from that source before moving on.
+
+			</p><p>
+
+			Take note of the "Install Destination". In most cases, you will have a choice of a personal area or a system area. 
+
+			The details vary according to your operating system.
+
+			</p><div class="sect4" title="5.2.2.1. Linux"><div class="titlepage"><div><div><h5 class="title"><a id="destination-linux"></a>5.2.2.1. Linux</h5></div></div></div><p>
+
+    				Unless you run as root (via su or sudo) you will only be able to install in your personal area, under ~/.sword.
+
+				If you run as root, or change permissions on the shared directory, you will also be able to install modules for
+
+				all users, typically in /usr/share/sword. There have been some requests for Xiphos to provide a means by which
+
+				an ordinary (non-root) user could start the program, gain temporary write access to the system area while installing
+
+				modules, and then revoke that access after installation is complete.  Attempting to devise a scheme to do this has
+
+				proven quite difficult, given the different superuser management schemes employed by various Linux distributions. 
+
+				Therefore, at this time there are no ongoing plans to try to solve this problem, and users are advised to enable 
+
+				write access to the system area outside Xiphos.
+
+				</p></div><div class="sect4" title="5.2.2.2. Windows XP"><div class="titlepage"><div><div><h5 class="title"><a id="destination-xp"></a>5.2.2.2. Windows XP</h5></div></div></div><p>
+
+				You may install modules to a shared folder so the modules are available to all users. If you have previously used
+
+				"The Sword Project for Windows", this folder will be "C:\Program Files\Crosswire\The Sword Project\Sword". Otherwise
+
+				it will be "C:\Documents and Settings\All Users\Application Data\Sword". You may also install modules to a location
+
+				that can only be seen by you. This location is "C:\Documents and Settings\YOUR NAME\Application Data\Sword".
+
+				</p></div><div class="sect4" title="5.2.2.3. Windows Vista"><div class="titlepage"><div><div><h5 class="title"><a id="destination-vista"></a>5.2.2.3. Windows Vista</h5></div></div></div><p>
+
+				Vista works much the same as XP, except for the locations. The private location is 
+
+				"C:\Users\YOUR NAME\AppData\Roaming\Sword". The shared location is "C:\ProgramData\Sword".
+
+				</p></div></div></div><div class="sect2" title="5.3. Installing, Updating, and Maintaining Modules"><div class="titlepage"><div><div><h3 class="title"><a id="module-management"></a>5.3. Installing, Updating, and Maintaining Modules</h3></div></div></div><div class="toc"><dl><dt><span class="sect3"><a href="module-manager.html#add-module">5.3.1. Installing, Updating, and Maintaining Modules</a></span></dt><dt><span class="sect3"><a href="module-manager.html#remove-module">5.3.2. Module Maintenance</a></span></dt></dl></div><div class="sect3" title="5.3.1. Installing, Updating, and Maintaining Modules"><div class="titlepage"><div><div><h4 class="title"><a id="add-module"></a>5.3.1. Installing, Updating, and Maintaining Modules</h4></div></div></div><div class="figure"><a id="idp7332328"></a><p class="title"><strong>
+
+      شكل 27. Installing and Updating Modules</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fa/figures/sword_install.png" alt="Module Installation" /></div></div></div></div><br class="figure-break" /><p>
+
+		The module manager generates both a per-type module list as well as a parallel availability list.  The latter is
+
+		intended to make it easier to find new items without having to work one's way through the per-type list, one subtree at a
+
+		time.  Modules which are either not yet installed or updated beyond what is currently installed will appear in both lists.
+
+		</p><p>
+
+		Modules that are already installed will show a checkmark beside them.  If a fast search ("lucene") index is available, a magnifying glass will be
+
+		displayed, otherwise an "X" will be shown; creation of the index is available on the Maintenance pane.  Locked modules, which require that you
+
+		purchase an unlock key from the module's copyright holder, will show a lock symbol.  If there are modules installed for which a more recent
+
+		version is available, a refresh icon will appear between the differing old and new version stamps.  There may be an approximate size displayed,
+
+		if the repository management provides this information, otherwise a question mark ("-?-") will be shown.
+
+		</p><p>
+
+		Select new modules to be installed by clicking the checkboxes and then the Install button at the bottom.  Any number of
+
+		modules may be requested for installation at one time.
+
+		</p><p>
+
+		If you acquire a locked module and have obtained the cipher key for it, the module is then unlocked in the main window: Open
+
+		the module, which will probably appear blank, then using the right-click context menu, choose "Unlock This Module."
+
+		</p></div><div class="sect3" title="5.3.2. Module Maintenance"><div class="titlepage"><div><div><h4 class="title"><a id="remove-module"></a>5.3.2. Module Maintenance</h4></div></div></div><div class="figure"><a id="idp7337592"></a><p class="title"><strong>
+
+      شكل 28. Module Maintenance</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fa/figures/sword_remove.png" alt="Module Maintenance" /></div></div></div></div><br class="figure-break" /><p>
+
+		Several maintenance functions are available: Removal, archival, index, and index deletion.
+
+		</p><p>
+
+		Removal disposes of a module entirely.  There is no recovery of the module unless you have previously archived a copy of it.
+
+		</p><p>
+
+		Archival is available for any module, although it is provided with personal commentaries specifically in mind.  A *.zip of
+
+		the module is left in the directory ~/.sword/zip.  Archival prior to removal of personal commentaries is recommended, in
+
+		order to be available for future re-install if the subject matter of the personal commentary becomes important again.
+
+		</p><p>
+
+		Indexing is provided so that the underlying Sword search support can create the index needed for the "lucene" fast-search
+
+		functions.  If the index is not created, plain multi-word search will still be available, but it will be much slower.  With
+
+		the index in place, searches through an entire Bible can take just a few seconds.
+
+		</p><p>
+
+		Indexes may be deleted as well.
+
+		</p></div></div><div class="sect2" title="5.4. Installing Non-Standard Modules"><div class="titlepage"><div><div><h3 class="title"><a id="non-standard-modules"></a>5.4. Installing Non-Standard Modules</h3></div></div></div><p>
+
+		Some resource modules in Sword Project format are available from sources other than Crosswire and not from a module manager-ready repository.
+
+		Necessarily, installing such a module is a manual task.
+
+		</p><p>
+
+		Modules are normally packaged as *.zip files; they contain a configuration file plus a number of data files.  Installation
+
+		of such a module is done by cd'ing to your personal Sword (not <span class="application">Xiphos</span>) configuration
+
+		directory, ~/.sword, and unzipping the file there.  The configuration file will be left in "mods.d", and the module's data
+
+		files will go into a subdirectory of "modules".  Alternatively, if you have write access to the system Sword directory,
+
+		typically /usr/share/sword, you may cd there instead before unzipping.
+
+		</p><p>
+
+		Restart <span class="application">Xiphos</span> after installing such a module, so that a fresh instance of the program can
+
+		notice the new module in place.
+
+		</p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="right"><a accesskey="p" href="preferences.html">قبلی</a> </td><td width="20%" align="center"> </td><td width="40%" align="left"> <a accesskey="n" href="search.html">بعدی</a></td></tr><tr><td width="40%" align="right" valign="top">4. Preferences </td><td width="20%" align="center"><a accesskey="h" href="index.html">خانه</a></td><td width="40%" align="left" valign="top"> 6. The Search Function</td></tr></table></div>
+</div>
+
+</div>
+<div id="footer">
+
+
+Copyright © 2000-2020, The Xiphos Developer Team
+</div>
+
+
+</body>
+</html>
+
+

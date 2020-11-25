@@ -1,0 +1,288 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb">
+<head>
+<title>Xiphos -- Open Source Bible Study Software
+3. Interface
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="../../media/images/favicon.ico" />
+<!-- Will create separate css file later? -->
+<style type="text/css">
+html{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	margin: 0px 0px 0px 245px;
+	padding: 0px;
+	background-color: #369;
+	color: white;
+	font-family: Georgia, serif;
+	background-image: url(../../media/images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: 245px 0px;
+}
+div#footer{
+	margin-top: 120px;
+	padding: 10px;
+	border-top: 1px solid white;
+	text-align: center;
+}
+div#content{
+	padding-left: 30px;
+	padding-right: 20px;
+}
+div#side{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+a{
+	color: #CCF;
+}
+a img{
+	border: 0;
+}
+hr{
+	height: 1px;
+	color: #CCF;
+	background-color: #CCF;
+	border: 0px solid #CCF;
+}
+img.photo{
+	border: 10px solid white;
+}
+div.menu{
+	background-color: #147;
+	border-bottom: 1px solid white;
+}
+div.menu h1{
+	margin: 0px;
+	float: left;
+	padding-left: 20px;
+}
+ul.menu{
+	margin: 0px;
+	padding: 10px;
+	display: block;
+	text-align: right;
+}
+ul.menu li{
+	display: inline;
+	padding: 10px;
+}
+a.menu{
+	text-decoration: none;
+	font-weight: bold;
+}
+a.menu:hover{
+	color: white;
+	text-decoration: underline;
+}
+span.last_modified{
+	color: #CCF;
+}
+#download_button{
+background-image: url(../../media/images/147-369-50.gif); background-repeat: repeat-x; background-color: #369; background-position: top; color: white; border: 1px solid #FFF; width: 30%; text-align: center; padding: 20px 0px; width:100%; margin-bottom: 20px;
+}
+#download_button a{
+font-size: 150%; font-weight: bold
+}
+#button_and_screenshot{
+float: right;
+width: 409px;
+padding: 0px 0px 20px 20px;
+}
+
+#manual_toc{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 5px; 
+	border: 1px solid #CCF; 
+	width: 220px;
+	margin: 7px 20px 20px 7px;
+}
+#manual_content{
+/*margin-left: 23%;*/
+}
+#manual_toc ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+#manual_toc li{
+	padding: 3px;
+	margin: 0px;
+}
+#manual_toc li.even{
+	background-color: #258;
+}
+#manual_toc li.odd{
+	background-color: #369;
+}
+.guisubmenu{
+	font-weight: bold;
+}
+.guimenuitem{
+	font-weight: bold;
+	font-style: italic;
+}
+.application{
+	font-weight: bold;
+	font-style: italic;
+}
+.command{
+	font-family: courier;
+	font-weight: bold;
+}
+.interface{
+	font-weight: bold;
+	font-style: italic;
+}
+div.titlepage{
+	margin-top: 50px;
+}
+div.figure{
+	border: 1px solid #CCF; /*#58B;*/
+	padding: 5px;
+}
+div.tip, div.warning{
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	padding: 5px;
+	padding-left: 90px;	
+	border: 3px solid #147;
+	background-color: #258;
+
+}
+div.tip h3, div.warning h3{
+	display: none;
+}
+div.tip{
+	background-image: url(../../media/images/info.png);
+}
+div.warning{
+	background-image: url(../../media/images/important.png);
+}
+h3.title{
+	background-color: #CCF;
+	padding: 5px;
+	color: #369;
+}
+div.authorgroup{
+	padding-left: 20px;
+}
+h4{
+	border-bottom: 1px solid #CCF;
+}
+div#manual_html_link{
+	background-color: #258;
+	padding: 5px;
+	margin: 5px 0px;
+}
+
+</style>
+</head>
+<body>
+<div id="side"><img src="../../media/images/side.jpg" alt="Xiphos Bible" /></div>
+<div class="menu">
+<h1>Xiphos</h1>
+<ul class="menu">
+<li class="menu"><a class="menu" href="../../index.html">Home</a></li> <li class="menu"><a class="menu" href="../../about/index.html">About</a></li> <li class="menu"><a class="menu" href="../../download/index.html">Download</a></li> <li class="menu"><a class="menu" href="../../help/index.html">Help</a></li> <li class="menu"><a class="menu" href="https://xiphos.org/manual/">Documentation</a></li> <li class="menu"><a class="menu" href="../../development/index.html">Development</a></li> <li class="menu"><a class="menu" href="../../links/index.html">Links</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<div id="content">
+
+<div id="manual_toc">
+<a href="../../index.html"><img src="../../media/images/xiphos_200.png" alt="Xiphos Logo"></a><br />
+<ul>
+
+<li class="odd"><a href="https://xiphos.org/manual/fr/">Manuel de Xiphos :</a></li>
+
+<li class="even"><a href="xiphos-introduction.html">1. Introduction</a></li>
+
+<li class="odd"><a href="familiar.html">2. Premiers pas</a></li>
+
+<li class="even"><a href="interface.html">3. Interface</a></li>
+
+<li class="odd"><a href="preferences.html">4. Préférences</a></li>
+
+<li class="even"><a href="module-manager.html">5. Gérer les modules</a></li>
+
+<li class="odd"><a href="search.html">6. Fonctions de recherche</a></li>
+
+<li class="even"><a href="studypad.html">7. Bloc-notes</a></li>
+
+<li class="odd"><a href="personal.html">8. Commentaires personnels</a></li>
+
+<li class="even"><a href="journals.html">9. Listes de prières et Journaux</a></li>
+
+<li class="odd"><a href="onlinehelp.html">10. Obtenir de l&#39;aide en ligne</a></li>
+
+<li class="even"><a href="originallanguage.html">11. Étude des textes originaux</a></li>
+
+</ul>
+
+<br/>
+<ul>
+
+
+
+
+<li class="odd"><a href="https://xiphos.org/manual/">English</a></li>
+
+
+
+<li class="even"><a href="https://xiphos.org/manual/fa/">Persian</a></li>
+
+
+</ul>
+</div>
+<div id="manual_content">
+<hr />
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Interface</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="familiar.html">Précédent</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="preferences.html">Suivant</a></td></tr></table><hr /></div><div class="sect1" title="3. Interface"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="interface"></a>3. Interface</h2></div></div></div><div class="toc"><dl><dt><span class="sect2"><a href="interface.html#menubar">3.1. Barre de menu</a></span></dt><dt><span class="sect2"><a href="interface.html#toolbars">3.2. Barres d'outils</a></span></dt><dt><span class="sect2"><a href="interface.html#xiphos-sidebar">3.3. La barre d'outils</a></span></dt><dt><span class="sect2"><a href="interface.html#xiphos-bible">3.4. Le volet des textes bibliques</a></span></dt><dt><span class="sect2"><a href="interface.html#xiphos-viewer">3.5. Aperçu</a></span></dt><dt><span class="sect2"><a href="interface.html#xiphos-commentaries">3.6. Le volet des commentaires</a></span></dt><dt><span class="sect2"><a href="interface.html#xiphos-dictionary">3.7. Volet dictionnaire</a></span></dt><dt><span class="sect2"><a href="interface.html#xiphos-shortcut">3.8. Raccourcis clavier</a></span></dt></dl></div><div class="sect2" title="3.1. Barre de menu"><div class="titlepage"><div><div><h3 class="title"><a id="menubar"></a>3.1. Barre de menu</h3></div></div></div><p>La <span class="interface">Barre de menu</span> se situe en haut de la fenêtre de l'application <span class="application">Xiphos</span>.  Pratiquement toutes les fonctions sont disponibles en utilisant les éléments de menu appropriés. Les différentes fonctions sont regroupées par type. Par exemple, les opérations sur les fichiers sont regroupées dans le menu  <span class="guisubmenu">Fichier</span>.</p><div class="figure"><a id="menubar_figure"></a><p class="title"><strong>Figure 5. Barre de menu</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fr/figures/interface_menubar.png" alt="Barre d'outil de Xiphos" /></div></div></div></div><br class="figure-break" /></div><div class="sect2" title="3.2. Barres d'outils"><div class="titlepage"><div><div><h3 class="title"><a id="toolbars"></a>3.2. Barres d'outils</h3></div></div></div><div class="toc"><dl><dt><span class="sect3"><a href="interface.html#idp18649344">3.2.1. Boutons de déplacement avant/arrière dans l'historique.</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-toolbar-book">3.2.2. Sélecteur de livre de la Bible</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-toolbar-chapter">3.2.3. Sélecteur de chapitre de la Bible</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-toolbar-verse">3.2.4. Sélecteur de verset de la Bible</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-toolbar-summary">3.2.5. Zone de saisie d'une référence biblique</a></span></dt></dl></div><p>La fonction de la <span class="interface">Barre d'outils</span> est de commander le volet des <span class="interface">Textes bibliques.</span> et des <span class="interface"> Commentaires</span>. Les commandes sont activées par un clic de la souris sur un des boutons de la barre d'outils. Si le curseur de la souris est déplacé au-dessus d'un des boutons, à ce moment-là une bulle d'aide apparaît, décrivant la fonction de ce bouton.</p><div class="figure"><a id="toolbar_figure"></a><p class="title"><strong>Figure 6. Barre d'outil</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fr/figures/interface_toolbar.png" alt="La barre d'outils" /></div></div></div></div><br class="figure-break" /><p>La <span class="interface">Barre d'outils</span> présente les fonctions suivantes :</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Boutons de déplacement dans l'historique des versets consultés</p></li><li class="listitem"><p>Sélecteur de livre de la Bible</p></li><li class="listitem"><p>Sélecteur de chapitre de la Bible</p></li><li class="listitem"><p>Sélecteur de verset de la Bible</p></li><li class="listitem"><p>Zone de saisie d'une référence biblique</p></li></ul></div><div class="sect3" title="3.2.1. Boutons de déplacement avant/arrière dans l'historique."><div class="titlepage"><div><div><h4 class="title"><a id="idp18649344"></a>3.2.1. Boutons de déplacement avant/arrière dans l'historique.</h4></div></div></div><p>Permettent de se déplacer dans l'historique des passages consultés.</p></div><div class="sect3" title="3.2.2. Sélecteur de livre de la Bible"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-toolbar-book"></a>3.2.2. Sélecteur de livre de la Bible</h4></div></div></div><p>Permet de sélectionner un livre de la Bible. Le premier verset du livre est affiché immédiatement dans le volet des<span class="interface"> textes bibliques</span> et le volet des<span class="interface"> commentaires</span>.</p></div><div class="sect3" title="3.2.3. Sélecteur de chapitre de la Bible"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-toolbar-chapter"></a>3.2.3. Sélecteur de chapitre de la Bible</h4></div></div></div><p>Permet de sélectionner un chapitre du livre de la Bible actuellement affichée. Le premier verset du chapitre est affiché immédiatement dans le volet des<span class="interface"> textes bibliques</span> et le volet des <span class="interface">commentaires</span>.</p></div><div class="sect3" title="3.2.4. Sélecteur de verset de la Bible"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-toolbar-verse"></a>3.2.4. Sélecteur de verset de la Bible</h4></div></div></div><p>Permet de sélectionner rapidement un verset du chapitre en cours de la Bible. Le verset est affiché immédiatement.dans le volet des <span class="interface">textes bibliques</span> et le volet des <span class="interface">commentaires</span>.</p></div><div class="sect3" title="3.2.5. Zone de saisie d'une référence biblique"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-toolbar-summary"></a>3.2.5. Zone de saisie d'une référence biblique</h4></div></div></div><p>Permet la saisie manuelle d'un passage sous la forme <span class="interface">livre chapitre:verset</span> {ex: Jn 3:16}.Le verset est affiché après appui sur la touche <span class="keycap"><strong>Entrée</strong></span>.</p><div class="warning" title="Avertissement" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Avertissement</h3><p>Les valeurs de livre, chapitre et verset doivent être correctes, sinon le le résultat obtenu risque d'être différent de celui désiré.</p></div></div></div><div class="sect2" title="3.3. La barre d'outils"><div class="titlepage"><div><div><h3 class="title"><a id="xiphos-sidebar"></a>3.3. La barre d'outils</h3></div></div></div><div class="figure"><a id="sidebar_figure"></a><p class="title"><strong>Figure 7. Volet latéral</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fr/figures/interface_sidepane.png" alt="La barre d'outils" /></div></div></div></div><br class="figure-break" /><p>Le <span class="interface">volet latéral</span> est situé sur la partie gauche de la fenêtre principale de <span class="application">Xiphos</span>. Le <span class="interface">volet latéral</span> permet de faire son choix dans les modules Sword, de gérer et utiliser les signets, d'effectuer des recherches basiques ou d'afficher les listes de versets. La sélection d'un module dans la liste des modules affiche son contenu dans la fenêtre principale. Le menu contextuel (click droit) offre d'autres possibilités, ouvrir le module dans un nouvel onglet, l'ouvrir dans une fenêtre distincte, ou consulter l'information «_À propos » du module.</p><p>Pour basculer entre toutes les fonctions du volet latéral, les boutons ont été placés au sommet du volet latéral.</p><div class="figure"><a id="shortcut_figure"></a><p class="title"><strong>Figure 8. Raccourcis du volet latéral</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fr/figures/interface_shortcut.png" alt="Raccourcis du volet latéral" /></div></div></div></div><br class="figure-break" /></div><div class="sect2" title="3.4. Le volet des textes bibliques"><div class="titlepage"><div><div><h3 class="title"><a id="xiphos-bible"></a>3.4. Le volet des textes bibliques</h3></div></div></div><div class="toc"><dl><dt><span class="sect3"><a href="interface.html#xiphos-bible-open">3.4.1. Ouvrir une version différente de la Bible</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-bible-parallel">3.4.2. Utilisation du mode Vue parallèle</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-bible-open-separate">3.4.3. Ouvrir le texte·biblique dans une fenêtre distincte</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-bible-about">3.4.4. Rechercher les informations à propos de la version courante.</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-bible-options">3.4.5. Options des modules</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-view-options">3.4.6. Options d'affichage</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-default-css">3.4.7. Contrôle de l'affichage avec les CSS</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-user-annotation">3.4.8. Annotation personnelle</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-geography-support">3.4.9. Support de la géographie</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-bible-dictionary">3.4.10. Définition d'un mot particulier</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-bible-find">3.4.11. Rechercher un mot spécifique</a></span></dt></dl></div><div class="figure"><a id="textpane_figure"></a><p class="title"><strong>Figure 9. Le volet des textes bibliques</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fr/figures/interface_biblepane.png" alt="Le volet des textes bibliques" /></div></div></div></div><br class="figure-break" /><p>À droite du volet latéral, se trouve le volet des <span class="interface">textes bibliques</span>. 
+
+Les différentes versions de la Bible sont affichées dans cette zone. Au démarrage de 
+
+<span class="application">Xiphos</span>, la version utilisée précédemment dans l'onglet
+
+le plus à gauche est affichée.</p><div class="sect3" title="3.4.1. Ouvrir une version différente de la Bible"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-bible-open"></a>3.4.1. Ouvrir une version différente de la Bible</h4></div></div></div><p>Pour remplacer la version de la Bible en cours d'utilisation par une autre version :</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Faire un clic du bouton droit de la souris dans le volet d'affichage des <span class="interface">textes bibliques</span>. Dans le menu qui se présente, choisir <span class="guimenuitem">Fichier</span> → <span class="guimenuitem">Ouvrir le module</span> et sélectionner la version désirée.</p></li><li class="listitem"><p>Ou après avoir activé l'option <span class="guimenuitem">Modules</span> du <span class="interface">volet  latéral</span>, choisir <span class="guimenuitem">Textes  bibliques</span> → <span class="guimenuitem">langue de votre choix </span> et sélectionner la version désirée.</p></li></ul></div></div><div class="sect3" title="3.4.2. Utilisation du mode Vue parallèle"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-bible-parallel"></a>3.4.2. Utilisation du mode Vue parallèle</h4></div></div></div><p>Une fonction intéressante de <span class="application">Xiphos</span> est la possibilité d'afficher en parallèle plusieurs versions de la Bible. Le mode Vue parallèle est activé en sélectionnant l'onglet <span class="guimenuitem">Vue parallèle</span> situé juste en-dessous du volet des <span class="interface">textes bibliques</span>, à côté de l'onglet <span class="guimenuitem">Vue simple</span>.</p><p>La sélection des modules à afficher dans la vue parallèle se fait dans la boîte de dialogue des <span class="guibutton">Préférences</span>, à ouvrir depuis le menu <span class="guimenuitem">Édition</span>.
+
+Dans la boîte de dialogue, sélectionner Modules, puis en parallèle. Il est possible d'ajouter ou de soustraire de la liste les modules qui seront affichés dans la vue parallèle. La barre d'outils est munie d'un outil de sélection pour effacer la liste, supprimer un module de la liste, et ajouter des modules à la liste.</p><p>Le mode <span class="guimenuitem">Vue parallèle</span> affiche un seul verset 
+
+à la fois. Il est possible de changer de verset en utilisant 
+
+les sélecteurs de la barre d'outils. Notons également que les modules de texte 
+
+contenant seulement le Nouveau Testament ou seulement l'Ancien Testament (ex. Westminster Leningrad Codex, Byzantine Majority Text) n'afficheront pas les livres, chapitres, versets qu'ils ne contiennent pas.</p><div class="figure"><a id="parallel_figure"></a><p class="title"><strong>Figure 10. Volet des textes bibliques, vue parallèle</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fr/figures/interface_parallel.png" alt="Volet des textes bibliques, vue parallèle" /></div></div></div></div><br class="figure-break" /><p>En outre, une vue parallèle peut être ouverte dans une fenêtre distincte par 
+
+appel du menu contextuel au moyen d'un clic droit de la souris sur la 
+
+vue parallèle, puis par sélection de <span class="guimenuitem">Détacher/Attacher</span>. 
+
+Le volet des <span class="interface">textes bibliques</span> revient alors à la 
+
+vue simple et une nouvelle fenêtre <span class="interface">Vue parallèle</span> 
+
+s'ouvre affichant le chapitre entier dans les mêmes versions.</p><div class="figure"><a id="parallel_figure_separate"></a><p class="title"><strong>Figure 11. Vue parallèle - Fenêtre distincte</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fr/figures/interface_parallel-separate.png" alt="Vue parallèle - Fenêtre distincte" /></div></div></div></div><br class="figure-break" /></div><div class="sect3" title="3.4.3. Ouvrir le texte·biblique dans une fenêtre distincte"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-bible-open-separate"></a>3.4.3. Ouvrir le texte·biblique dans une fenêtre distincte</h4></div></div></div><p>Pour ouvrir un texte biblique dans une fenêtre distincte de la fenêtre principale de   <span class="application">,, dans l'option  Modules du volet lat, choisir Textes bibliqueslangue de votre choix. Faire un clic droit sur la version souhaitOuvrir dans une fen. Le module s'ouvrira dans une fen</span></p><p>Les fenêtres distinctes comprenant un texte biblique ou un commentaire ont un bouton de synchronisation dans le coin supérieur gauche à côté de la barre de navigation. Lorsque ce bouton est activé, le texte biblique et le commentaire de la fenêtre principale sont synchronisés avec le contenu de la fenêtre distincte. La synchronisation se fait dans les deux sens: Toute fenêtre indépendante permettra de synchroniser la navigation avec toutes les autres fenêtres individuelles plus la fenêtre principale, et la fenêtre principale synchronisera tous les textes bibliques et commentaires des fenêtres distinctes dont le bouton de synchronisation est activé.</p></div><div class="sect3" title="3.4.4. Rechercher les informations à propos de la version courante."><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-bible-about"></a>3.4.4. Rechercher les informations à propos de la version courante.</h4></div></div></div><p>Pour obtenir des informations à propos de la version de la Bible en cours :</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Faire un clic droit à l'aide de la souris dans le volet des <span class="interface">textes bibliques</span>. Dans le menu contextuel qui s'affiche, sélectionner <span class="guimenuitem">À propos</span>.</p></li><li class="listitem"><p>Dans l'option  <span class="guimenuitem">Modules</span> du <span class="interface">volet latéral</span>, choisir <span class="guimenuitem">Textes bibliques</span> → <span class="guimenuitem">langue de votre choix</span>. Faire un clic droit sur la version souhaitée, puis dans le menu contextuel qui s'affiche, choisir l'option <span class="guimenuitem">À propos</span>.</p></li></ul></div></div><div class="sect3" title="3.4.5. Options des modules"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-bible-options"></a>3.4.5. Options des modules</h4></div></div></div><p>De nombreux modules de textes bibliques proposent des options additionnelles à activer suivant les besoins de  l'utilisateur :</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Paroles de Christ en rouge</p></li><li class="listitem"><p>Nombres de Strong</p></li><li class="listitem"><p>Étiquettes morphologiques</p></li><li class="listitem"><p>Notes de bas de page</p></li><li class="listitem"><p>Références croisées de l'Écriture</p></li><li class="listitem"><p>Entêtes</p></li><li class="listitem"><p>Afficher les images</p></li></ul></div><div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Les versions en d'autres langues tel le grec ou l'hébreu offrent des options particulières qui ne s'appliquent qu'à ces langues.</p></div><p>pour accéder à ces options :</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Faire un clic du bouton droit à l'aide de la souris dans le volet des <span class="interface">textes bibliques</span>. Dans le menu contextuel qui s'affiche, choisir <span class="guimenuitem">Options du module</span>, puis l'option désirée.</p></li></ul></div><div class="figure"><a id="module_options"></a><p class="title"><strong>Figure 12. Options des modules</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fr/figures/interface_biblepane-options.png" alt="Options des modules" /></div></div></div></div><br class="figure-break" /></div><div class="sect3" title="3.4.6. Options d'affichage"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-view-options"></a>3.4.6. Options d'affichage</h4></div></div></div><p>Plusieurs modes supplémentaires peuvent être sélectionnés à l'aide du menu <span class="guimenuitem">Afficher</span> de la barre de menu.</p><div class="figure"><a id="view_options"></a><p class="title"><strong>Figure 13. Options d'affichage</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fr/figures/interface_menubar-view.png" alt="Options d'affichage" /></div></div></div></div><br class="figure-break" /><p>Les 4 premières options commandent l'affichage des différents volets de l'interface. L'état d'affichage de chaque volet est spécifique à un onglet. Ceci permet, par exemple, d'avoir un onglet dédié à l'affichage des cartes (module dictionnaire avec les lieux triés alphabétiquement), en suspendant l'affichage des volets <span class="interface">Textes bibliques</span>, <span class="interface">Commentaires</span> et <span class="interface">Aperçu</span>.</p><p>Les options restantes commandent les autres options d'affichage.</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p><span class="guimenuitem">Onglets liés</span> - Par défaut, quand plus d'un onglet est ouvert, chacun permet de naviguer séparément dans les textes bibliques. Quand cette option est activée, tous les onglets sont liés ensemble, et affichent le même verset.</p></li><li class="listitem"><p><span class="guimenuitem">Synthèse vocale</span> - Quand cette option est activée, <span class="application">Xiphos</span> lit à voix haute les versets sélectionnés à l'aide du logiciel de synthèse vocale <span class="application">Festival</span>. Le moteur de synthèse vocale <span class="application">Festival</span> est largement utilisé et souvent installé par défaut dans les distributions Linux. (NDT: En général, les résultats sont meilleurs en anglais ).</p><p>De même, la synthèse vocale peut être utilisée sur des portions de textes bibliques, commentaires ou livres. Une fois le texte désiré mis en surbrillance, sélectionner  <span class="guimenuitem">Synthèse vocale du texte sélectionné</span> dans le menu contextuel obtenu à l'aide du clic droit de la souris.</p></li><li class="listitem"><p><span class="guimenuitem">Affiche les numéros de versets</span> - Normalement activée, cette option peut être désactivée pour ne pas afficher les numéros de versets dans le texte. </p></li><li class="listitem"><p><span class="guimenuitem">Verset en cours contrasté</span> - Désactivée par défaut, cette option permet de remplacer la couleur du verset en cours par une coloration au contraste plus élevée. Les couleurs sont modifiables dans la fenêtre de préférences.</p></li></ul></div></div><div class="sect3" title="3.4.7. Contrôle de l'affichage avec les CSS"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-default-css"></a>3.4.7. Contrôle de l'affichage avec les CSS</h4></div></div></div><p>Les utilisateurs familiers des feuilles de style en cascade (CSS) peuvent créer le fichier "default-style.css" dans le répertoire .xiphos et inclure dans ce fichier tout contrôle CSS souhaité. Attention, il est très facile de se tirer une balle dans le pied avec les CSS, et une erreur aura une incidence sur l'affichage de tous les modules. Cette disposition existe pour fournir aux utilisateurs avancés les moyens qu'ils souhaitent."</p></div><div class="sect3" title="3.4.8. Annotation personnelle"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-user-annotation"></a>3.4.8. Annotation personnelle</h4></div></div></div><p>De nombreux utilisateurs souhaitent ajouter des annotations personnelles à des versets particuliers, sans éprouver pour autant le besoin d'employer un module complet de commentaires personnels.
+
+<span class="application">Xiphos</span> offre cette fonctionnalité dans le menu contextuel du volet biblique obtenu par un clic-droit. Une boite de dialogue s'affiche indiquant la référence du verset en cours et offre une zone de saisie où entrer une brève annotation personnelle. Dès que la boite de dialogue est refermée avec <span class="guibutton">Annoter</span>, le verset est surligné (par défaut bleu sur jaune) et une marque <span class="guibutton">*u</span> est insérée au début du verset. Ceci est métaphoriquement similaire aux utilisateurs qui soulignent des versets dans leurs Bibles papier avec un surligneur jaune, et inscrivent des notes personnelles dans la marge.</p><p>La sélection d'un verset déjà annoté, fait apparaître (dans le cas habituel) le contenu existant prêt pour être re-édité. L'annotation d'un verset peut être retirée; le verset cesse alors d'être affiché en surbrillance.</p><p>Si l'utilisateur retire le nom du module de la référence affichée en haut de la boite de dialogue, l'annotation s'applique alors à n'importe quel module Biblique pour le verset sélectionné. Toutefois, dans ce cas, une nouvelle sélection du verset annoté ne fait pas afficher le contenu existant, car le contenu est lié à la référence du module original.</p></div><div class="sect3" title="3.4.9. Support de la géographie"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-geography-support"></a>3.4.9. Support de la géographie</h4></div></div></div><p>Une connection pour naviguer sur le site BibleMap.org est fournie lors de la sélection d'un lieu par la souris dans n'importe quel texte. Sélectionner <span class="guimenuitem">Définition du mot sélectionné</span> → <span class="guimenuitem">Recherche sur BibleMap.org</span> par un clic-droit dans le menu contextuel. Un navigateur web est alors lancé pour montrer la géographie du nom sélectionné via BibleMap qui affiche le détail biblique superposé sur une interface Google Maps.</p><p>
+
+			</p></div><div class="sect3" title="3.4.10. Définition d'un mot particulier"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-bible-dictionary"></a>3.4.10. Définition d'un mot particulier</h4></div></div></div><p>Pour obtenir la définition d'un mot particulier, faire un double-clic à l'aide de la souris sur le mot désiré. Le mot se met en surbrillance et sa définition, si le mot est répertorié, s'affiche ensuite dans le volet <span class="interface">dictionnaire</span>.</p></div><div class="sect3" title="3.4.11. Rechercher un mot spécifique"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-bible-find"></a>3.4.11. Rechercher un mot spécifique</h4></div></div></div><p>Pour rechercher un mot spécifique dans un passage :</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Faire un clic droit à l'aide de la souris dans le volet des <span class="interface">textes bibliques</span>. Dans le menu contextuel qui s'affiche, choisir <span class="guimenuitem">Éditer</span> → <span class="guimenuitem">Rechercher</span>. Une fenêtre s'ouvre ensuite, permettant la recherche d'un ou plusieurs mots. Saisir le texte à rechercher, puis ensuite valider à l'aide de <span class="guibutton">Rechercher</span> et <span class="guibutton">Rechercher suivant</span>.</p></li></ul></div></div></div><div class="sect2" title="3.5. Aperçu"><div class="titlepage"><div><div><h3 class="title"><a id="xiphos-viewer"></a>3.5. Aperçu</h3></div></div></div><div class="figure"><a id="viewer_figure"></a><p class="title"><strong>Figure 14. Aperçu</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fr/figures/interface_viewer.png" alt="Aperçu" /></div></div></div></div><br class="figure-break" /><p>Le volet Aperçu est l'endroit où sont affichés les nombres de Strong, les étiquettes morphologiques et les références croisées présentées dans le volet des <span class="interface">textes bibliques</span>.</p><p>Les notes de bas de page s'affichent dans le volet <span class="interface">Aperçu</span> quand un indicateur de type <span class="guimenuitem">*n</span> est survolé par la souris dans un texte biblique; Elles restent visibles jusqu'à ce que le curseur de la souris survole un autre indicateur. Cependant, dans certains cas, il peut être souhaitable de figer le texte pour déplacer ensuite le curseur de la souris dans le volet <span class="interface">Aperçu</span> pour sélectionner un lien ou lire une longue note. Dans ce cas, un clic sur le de bouton du milieu à l'aide de la souris (ou un appui sur la touche <span class="guibutton">Majuscule</span>) fige l'affichage de la note de bas de page et permet de se déplacer ensuite dans le volet <span class="interface">Aperçu</span>.</p><p>Les références croisées <span class="guimenuitem">*x</span> fonctionnent sensiblement de la même façon. Un clic à l'aide du bouton de la souris sur l'indicateur <span class="guimenuitem">*x</span> provoque l'affichage des références croisées dans la liste de <span class="guimenuitem">Versets</span> du <span class="interface">volet latéral</span>, où ensuite sélectionnés un par un, ils peuvent être lus dans le volet <span class="interface">Aperçu</span>. Alternativement, une option des Préférences permet que la liste des références croisées soit envoyée directement dans le volet <span class="interface">Aperçu</span>.</p><p>N'importe quel verset surligné indique une annotation personnelle associée avec lui, ces versets incluent une marque <span class="guibutton">*u</span> au début. Survoler cette marque permet d'afficher l'annotation dans le volet Aperçu, de la même façon que les notes de bas de page.</p><p>Si un calendrier biblique a été défini dans les Préférences, alors la méditation biblique du jour est affichée dans le volet Aperçu, soit au démarrage du programme ou soit lorsque l'utilisateur le demande via le menu <span class="guimenuitem">Affichage</span>.</p></div><div class="sect2" title="3.6. Le volet des commentaires"><div class="titlepage"><div><div><h3 class="title"><a id="xiphos-commentaries"></a>3.6. Le volet des commentaires</h3></div></div></div><div class="toc"><dl><dt><span class="sect3"><a href="interface.html#xiphos-commentary-about">3.6.1. Rechercher les informations à propos du module de commentaires</a></span></dt><dt><span class="sect3"><a href="interface.html#xiphos-commentary-headings">3.6.2. Entêtes des commentaires</a></span></dt></dl></div><div class="figure"><a id="commentary_figure"></a><p class="title"><strong>Figure 15. Le volet des commentaires</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fr/figures/interface_commentarypane.png" alt="Commentaire" /></div></div></div></div><br class="figure-break" /><p>Le volet d'affichage des <span class="interface">commentaires</span> permet la consultation des commentaires relatifs au verset en cours ou de se référer à d'autres commentaires existants. Le commentaire est directement lié au passage affiché dans le volet d'affichage des<span class="interface"> textes bibliques</span>, ainsi pour consulter le commentaire d'un autre passage, il suffit de changer de verset à l'aide de la <span class="interface">Barre d'outils</span>.</p><p>Si une image fait partie d'un commentaire, d'un livre ou d'un dictionnaire, elle peut être affichée agrandie dans une nouvelle fenêtre en la sélectionnant par un simple clic. Cette fonctionnalité est particulièrement intéressante si l'option de réduction des images a été activée avec pour résultat des images très rétrécies.</p><div class="note" title="Note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>En changeant la référence du passage à l'aide de la <span class="interface">Barre d'outils</span>, le contenu du volet d'affichage des<span class="interface"> textes bibliques</span> et du  volet d'affichage des<span class="interface"> commentaires</span> changent simultanément.</p></div><div class="sect3" title="3.6.1. Rechercher les informations à propos du module de commentaires"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-commentary-about"></a>3.6.1. Rechercher les informations à propos du module de commentaires</h4></div></div></div><p>À propos du commentaire actuellement affiché :</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Faire un clic du bouton droit à l'aide de la souris dans le volet d'affichage des <span class="interface">commentaires</span>. Dans le menu contextuel qui se présente, sélectionner <span class="guimenuitem">À propos de</span>.</p></li></ul></div></div><div class="sect3" title="3.6.2. Entêtes des commentaires"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-commentary-headings"></a>3.6.2. Entêtes des commentaires</h4></div></div></div><p>De nombreux commentaires incorporent des entêtes avec une note d'introduction sur le livre ou le chapitre en cours d'utilisation dans le volet des<span class="interface"> textes bibliques</span>. Pour obtenir l'affichage de l'entête :</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Faire un clic du bouton droit à l'aide de la souris dans le volet d'affichage des <span class="interface">commentaires</span>. Dans le menu contextuel qui se présente, choisir <span class="guimenuitem">Afficher l'entête du livre</span> ou <span class="guimenuitem">Afficher l'entête du chapitre</span>.</p></li></ul></div></div></div><div class="sect2" title="3.7. Volet dictionnaire"><div class="titlepage"><div><div><h3 class="title"><a id="xiphos-dictionary"></a>3.7. Volet dictionnaire</h3></div></div></div><div class="figure"><a id="dict_figure"></a><p class="title"><strong>Figure 16. Le volet du dictionnaire</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fr/figures/interface_dictionary.png" alt="Le volet du dictionnaire" /></div></div></div></div><br class="figure-break" /><p>Le volet <span class="interface">Dictionnaire</span> est piloté à l'aide des flèches haut/bas, en saisissant un mot dans la zone de saisie ou en double-cliquant sur des mots dans les volets <span class="interface">Textes bibliques</span>, <span class="interface">Commentaires</span>, <span class="interface">Livre</span>.</p></div><div class="sect2" title="3.8. Raccourcis clavier"><div class="titlepage"><div><div><h3 class="title"><a id="xiphos-shortcut"></a>3.8. Raccourcis clavier</h3></div></div></div><p><span class="application">Xiphos</span> présente un certain nombre de raccourcis clavier, listés ci-dessous par groupes fonctionnels :</p><p>Sélection/ouverture des fenêtres et barre de navigation</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p><span class="guibutton">Ctrl-L</span> sélectionne la zone de saisie de référence biblique. Il est ainsi possible de saisir directement une nouvelle référence de verset. Il est à noter que <span class="application">Xiphos</span>, comme d'autres applications Sword, accepte de nombreuses abréviations. «­­ G »  correspond à Genèse par exemple, et n'importe quel nom de livre saisi seul implique chapitre 1, verset 1.</p></li><li class="listitem"><p><span class="guibutton">Alt-C</span> ramène au premier-plan le volet <span class="interface">Commentaire</span> si celui-ci est masqué par le volet <span class="interface">Livre</span>.</p></li><li class="listitem"><p><span class="guibutton">Alt-G</span> ramène au premier-plan le volet <span class="interface">Livre</span>.</p></li><li class="listitem"><p><span class="guibutton">Alt-D</span> place le focus sur la barre de navigation du volet <span class="interface">Dictionnaire</span>.</p></li><li class="listitem"><p><span class="guibutton">Ctrl-T</span> ouvre un nouvel onglet.</p></li><li class="listitem"><p><span class="guibutton">Ctrl-[1-9]</span> ouvre le n<sup>ième.</sup> onglet</p></li></ul></div><p>Changement de verset et propriétés du texte biblique :</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p><span class="guibutton">Ctrl-p/Ctrl-n</span> : Verset précédent/suivant. <span class="guibutton">k/j</span> est équivalent.</p></li><li class="listitem"><p><span class="guibutton">p/n</span> : Chapitre précédent/suivant.</p></li><li class="listitem"><p><span class="guibutton">P/N</span>:·Livre biblique suivant/précédent.</p></li><li class="listitem"><p><span class="guibutton">Maj-F10</span> appelle le menu contextuel du volet des <span class="interface">textes bibliques</span>.</p></li><li class="listitem"><p><span class="guibutton">Alt-S</span> bascule l'affichage des nombres de Strong.</p></li><li class="listitem"><p><span class="guibutton">Alt-M</span> bascule l'affichage des étiquettes morphologiques.</p></li><li class="listitem"><p><span class="guibutton">Alt-R</span> bascule l'affichage des « Paroles de Christ en rouge ».</p></li></ul></div><p>Ouverture de fenêtres spéciales :</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p><span class="guibutton">F1</span> ouvre ce manuel.</p></li><li class="listitem"><p><span class="guibutton">F2</span>: ouvre la fenêtre des <span class="guibutton">Préférences</span>·</p></li><li class="listitem"><p><span class="guibutton">F3</span> : ouvre la <span class="guibutton">Recherche avancée</span></p></li><li class="listitem"><p><span class="guibutton">Ctrl-F3</span> met en avant la recherche rapide dans le volet latéral.</p></li><li class="listitem"><p><span class="guibutton">F4</span> : ouvre le <span class="guibutton">Gestionnaire de modules</span>.</p></li><li class="listitem"><p><span class="guibutton">Alt-A</span> ouvre la fenêtre d'annotation du verset en cours.</p></li><li class="listitem"><p><span class="guibutton">Alt-B</span> ouvre la fenêtre <span class="interface">Ajouter un signet</span> sur le verset en cours</p></li><li class="listitem"><p><span class="guibutton">Ctrl-F</span> ouvre la fenêtre <span class="interface">Rechercher ...</span>. Le volet sur lequel la recherche est exécutée dépend de leur visibilité : si tous les volets sont affichés, le volet biblique a la préférence, sinon vient ensuite le volet des commentaires puis le livre et enfin le dictionnaire. Ainsi un onglet peut être dédié à n'afficher que le volet livre et la recherche initiée par <span class="guibutton">Ctrl-F</span> ne sera effectuée que dans ce volet livre.</p></li><li class="listitem"><p><span class="guibutton">Alt-P</span> détache / rattache la fenêtre de vue parallèle.</p></li><li class="listitem"><p><span class="guibutton">Alt-Z</span> ouvre l'éditeur de commentaires personnels, nommé Personal (<span class="guimenuitem">Modules</span> → <span class="guimenuitem">commentaires</span> → <span class="guimenuitem">English</span> → <span class="guimenuitem">Personal</span>).</p></li></ul></div><p>Règlage des tailles de police :</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p><span class="guibutton">Ctrl-Plus/Ctrl-Minus</span> augmente / diminue la taille de police</p></li><li class="listitem"><p><span class="guibutton">Ctrl-0</span> (zéro) initialise la taille de police de base à zéro.</p></li></ul></div><p>BibleSync :</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p><span class="guibutton">Ctrl-Alt-Shift-P</span> met BibleSync en mode Personnel.</p></li><li class="listitem"><p><span class="guibutton">Ctrl-Alt-Shift-S</span> met BibleSync en mode Orateur.</p></li><li class="listitem"><p><span class="guibutton">Ctrl-Alt-Shift-A</span> met BibleSync en mode Audience.</p></li><li class="listitem"><p><span class="guibutton">Ctrl-Alt-Shift-O</span> désactive BibleSync.</p></li><li class="listitem"><p><span class="guibutton">Ctrl-Alt-Shift-N</span> force une seule fois la navigation par BibleSync d'après la référence en cours dans la fenêtre principale. BibleSync doit être prêt à transmettre, en mode Personnel ou Orateur.</p></li></ul></div></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="familiar.html">Précédent</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="preferences.html">Suivant</a></td></tr><tr><td width="40%" align="left" valign="top">2. Premiers pas </td><td width="20%" align="center"><a accesskey="h" href="index.html">Sommaire</a></td><td width="40%" align="right" valign="top"> 4. Préférences</td></tr></table></div>
+</div>
+
+</div>
+<div id="footer">
+
+
+Copyright © 2000-2020, The Xiphos Developer Team
+</div>
+
+
+</body>
+</html>
+
+

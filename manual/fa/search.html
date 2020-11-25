@@ -1,0 +1,730 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb">
+<head>
+<title>Xiphos -- Open Source Bible Study Software
+6. The Search Function
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="../../media/images/favicon.ico" />
+<!-- Will create separate css file later? -->
+<style type="text/css">
+html{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	margin: 0px 0px 0px 245px;
+	padding: 0px;
+	background-color: #369;
+	color: white;
+	font-family: Georgia, serif;
+	background-image: url(../../media/images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: 245px 0px;
+}
+div#footer{
+	margin-top: 120px;
+	padding: 10px;
+	border-top: 1px solid white;
+	text-align: center;
+}
+div#content{
+	padding-left: 30px;
+	padding-right: 20px;
+}
+div#side{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+a{
+	color: #CCF;
+}
+a img{
+	border: 0;
+}
+hr{
+	height: 1px;
+	color: #CCF;
+	background-color: #CCF;
+	border: 0px solid #CCF;
+}
+img.photo{
+	border: 10px solid white;
+}
+div.menu{
+	background-color: #147;
+	border-bottom: 1px solid white;
+}
+div.menu h1{
+	margin: 0px;
+	float: left;
+	padding-left: 20px;
+}
+ul.menu{
+	margin: 0px;
+	padding: 10px;
+	display: block;
+	text-align: right;
+}
+ul.menu li{
+	display: inline;
+	padding: 10px;
+}
+a.menu{
+	text-decoration: none;
+	font-weight: bold;
+}
+a.menu:hover{
+	color: white;
+	text-decoration: underline;
+}
+span.last_modified{
+	color: #CCF;
+}
+#download_button{
+background-image: url(../../media/images/147-369-50.gif); background-repeat: repeat-x; background-color: #369; background-position: top; color: white; border: 1px solid #FFF; width: 30%; text-align: center; padding: 20px 0px; width:100%; margin-bottom: 20px;
+}
+#download_button a{
+font-size: 150%; font-weight: bold
+}
+#button_and_screenshot{
+float: right;
+width: 409px;
+padding: 0px 0px 20px 20px;
+}
+
+#manual_toc{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 5px; 
+	border: 1px solid #CCF; 
+	width: 220px;
+	margin: 7px 20px 20px 7px;
+}
+#manual_content{
+/*margin-left: 23%;*/
+}
+#manual_toc ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+#manual_toc li{
+	padding: 3px;
+	margin: 0px;
+}
+#manual_toc li.even{
+	background-color: #258;
+}
+#manual_toc li.odd{
+	background-color: #369;
+}
+.guisubmenu{
+	font-weight: bold;
+}
+.guimenuitem{
+	font-weight: bold;
+	font-style: italic;
+}
+.application{
+	font-weight: bold;
+	font-style: italic;
+}
+.command{
+	font-family: courier;
+	font-weight: bold;
+}
+.interface{
+	font-weight: bold;
+	font-style: italic;
+}
+div.titlepage{
+	margin-top: 50px;
+}
+div.figure{
+	border: 1px solid #CCF; /*#58B;*/
+	padding: 5px;
+}
+div.tip, div.warning{
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	padding: 5px;
+	padding-left: 90px;	
+	border: 3px solid #147;
+	background-color: #258;
+
+}
+div.tip h3, div.warning h3{
+	display: none;
+}
+div.tip{
+	background-image: url(../../media/images/info.png);
+}
+div.warning{
+	background-image: url(../../media/images/important.png);
+}
+h3.title{
+	background-color: #CCF;
+	padding: 5px;
+	color: #369;
+}
+div.authorgroup{
+	padding-left: 20px;
+}
+h4{
+	border-bottom: 1px solid #CCF;
+}
+div#manual_html_link{
+	background-color: #258;
+	padding: 5px;
+	margin: 5px 0px;
+}
+
+</style>
+</head>
+<body>
+<div id="side"><img src="../../media/images/side.jpg" alt="Xiphos Bible" /></div>
+<div class="menu">
+<h1>Xiphos</h1>
+<ul class="menu">
+<li class="menu"><a class="menu" href="../../index.html">Home</a></li> <li class="menu"><a class="menu" href="../../about/index.html">About</a></li> <li class="menu"><a class="menu" href="../../download/index.html">Download</a></li> <li class="menu"><a class="menu" href="../../help/index.html">Help</a></li> <li class="menu"><a class="menu" href="https://xiphos.org/manual/">Documentation</a></li> <li class="menu"><a class="menu" href="../../development/index.html">Development</a></li> <li class="menu"><a class="menu" href="../../links/index.html">Links</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<div id="content">
+
+<div id="manual_toc">
+<a href="../../index.html"><img src="../../media/images/xiphos_200.png" alt="Xiphos Logo"></a><br />
+<ul>
+
+<li class="odd"><a href="https://xiphos.org/manual/fa/">Xiphos راهنما</a></li>
+
+<li class="even"><a href="xiphos-introduction.html">1. مقدمه</a></li>
+
+<li class="odd"><a href="familiar.html">2. شروع به استفاده از زیفوس</a></li>
+
+<li class="even"><a href="interface.html">3. محیط کاری</a></li>
+
+<li class="odd"><a href="preferences.html">4. Preferences</a></li>
+
+<li class="even"><a href="module-manager.html">5. Module Manager</a></li>
+
+<li class="odd"><a href="search.html">6. The Search Function</a></li>
+
+<li class="even"><a href="studypad.html">7. The Studypad</a></li>
+
+<li class="odd"><a href="personal.html">8. The Personal Commentary</a></li>
+
+<li class="even"><a href="journals.html">9. Journals and Prayer Lists</a></li>
+
+<li class="odd"><a href="onlinehelp.html">10. Getting Help Online</a></li>
+
+<li class="even"><a href="originallanguage.html">11. Original Language Research</a></li>
+
+</ul>
+
+<br/>
+<ul>
+
+
+<li class="odd"><a href="https://xiphos.org/manual/fr/">French</a></li>
+
+
+
+<li class="even"><a href="https://xiphos.org/manual/">English</a></li>
+
+
+
+
+</ul>
+</div>
+<div id="manual_content">
+<hr />
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">6. The Search Function</th></tr><tr><td width="20%" align="right"><a accesskey="p" href="module-manager.html">قبلی</a> </td><th width="60%" align="center"> </th><td width="20%" align="left"> <a accesskey="n" href="studypad.html">بعدی</a></td></tr></table><hr /></div><div class="sect1" title="6. The Search Function"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="search"></a>6. The Search Function</h2></div></div></div><div class="toc"><dl><dt><span class="sect2"><a href="search.html#xiphos-searchpane">6.1. Simple Searches</a></span></dt><dt><span class="sect2"><a href="search.html#xiphos-advanced-search">6.2. Advanced Searches</a></span></dt><dt><span class="sect2"><a href="search.html#hdbk-op-search-dialog-text-regexp">6.3. Search Syntax using Regular Expression</a></span></dt></dl></div><div class="sect2" title="6.1. Simple Searches"><div class="titlepage"><div><div><h3 class="title"><a id="xiphos-searchpane"></a>6.1. Simple Searches</h3></div></div></div><div class="toc"><dl><dt><span class="sect3"><a href="search.html#xiphos-search-key">6.1.1. Search Key Entry Box</a></span></dt><dt><span class="sect3"><a href="search.html#xiphos-search-modselect">6.1.2. Search Module Selector</a></span></dt><dt><span class="sect3"><a href="search.html#xiphos-search-typeselect">6.1.3. Search Type Selector</a></span></dt><dt><span class="sect3"><a href="search.html#xiphos-search-options">6.1.4. Search Options Checkbox</a></span></dt><dt><span class="sect3"><a href="search.html#xiphos-search-scopeselect">6.1.5. Search Scope Selector</a></span></dt><dt><span class="sect3"><a href="search.html#xiphos-search-results">6.1.6. Search Results View</a></span></dt></dl></div><p>
+
+		To conduct a quick search within the current Bible or commentary module, the Search Bar in the Sidebar should usually be
+
+		adequate. Click either in the menu bar
+
+		<span class="guisubmenu">Edit</span> → <span class="guimenuitem">Search</span> or in the Sidebar
+
+		<span class="guisubmenu">Modules</span> → <span class="guimenuitem">Search</span> to access it.  </p><div class="figure"><a id="idp7349176"></a><p class="title"><strong>
+
+      شكل 29. The Search Bar</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fa/figures/interface_searchpane.png" alt="The Search Bar" /></div></div></div></div><br class="figure-break" /><p>
+
+		The <span class="interface">Search Dialog</span> consists of the following parts:
+
+		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>
+
+					Search Key Entry box
+
+					</p></li><li class="listitem"><p>
+
+					Search Module Selector
+
+					</p></li><li class="listitem"><p>
+
+					Search Type Selector
+
+					</p></li><li class="listitem"><p>
+
+					Search Options Checkbox
+
+					</p></li><li class="listitem"><p>
+
+					Search Scope Selector
+
+					</p></li><li class="listitem"><p>
+
+					Search Results View
+
+					</p></li></ul></div><div class="sect3" title="6.1.1. Search Key Entry Box"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-search-key"></a>6.1.1. Search Key Entry Box</h4></div></div></div><p>Allows entry of the key for which you would like to search. The 
+
+			search key can be a word, part of a word, several words, a phrase, or 
+
+			a regular expression depending on the type of search selected. When 
+
+			the search key is entered and all other selections in the search dialog 
+
+			are complete, click the <span class="guibutton">Find</span> button to begin 
+
+			the search.
+
+			</p><p>
+
+			This search uses the optimized search method (see next section) if
+
+			the module has previously been indexed, and will use AND semantics by default 
+
+			(matched verses contain all words you entered).
+
+			</p></div><div class="sect3" title="6.1.2. Search Module Selector"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-search-modselect"></a>6.1.2. Search Module Selector</h4></div></div></div><p>Allows selection of which modules	you would like to search. 
+
+			Select <span class="guibutton">Bible</span> to search Bible versions or 
+
+			<span class="guibutton">Commentary</span> to search commentaries. Only 
+
+			the currently active module will be searched.</p></div><div class="sect3" title="6.1.3. Search Type Selector"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-search-typeselect"></a>6.1.3. Search Type Selector</h4></div></div></div><p>Allows selection of the type of search. There are three search
+
+		types available:
+
+		</p><div class="variablelist"><dl><dt><span class="term"><span class="guibutton">Multi word</span></span></dt><dd><p>This type will match any verse that has 
+
+					all the words in the search key, regardless of where 
+
+					they appear in the verse.  By default, "lucene" fast search
+
+                                        will be used, with fallback to the slower plain version of
+
+                                        multi-word search in the absence of an index.</p></dd><dt><span class="term"><span class="guibutton">Regular expression</span></span></dt><dd><p>This search uses a regular expression
+
+					as a search key. A regular expression is a pattern used 
+
+					to match a string of text. A regular expression can be 
+
+					used to find verses with words that match a particular 
+
+					pattern. For example the regular expression
+
+					<strong class="userinput"><code>[a-z]*iah </code></strong> will match verses that contain
+
+					the words Aiah, Ahaziah, Athaliah and Amariah.</p><p>A complete discussion of regular expressions is 
+
+					beyond the scope of this manual, but more information 
+
+					can be found in the grep man page.</p></dd><dt><span class="term"><span class="guibutton">Exact phrase</span></span></dt><dd><p>This type will match the search key
+
+					exatly as entered. If the search key is <strong class="userinput"><code>
+
+					it is good</code></strong>, this search would match a verse
+
+					which contains "<span class="emphasis"><em>it is good</em></span>," but 
+
+					would not match a verse	which contains "<span class="emphasis"><em>
+
+					good</em></span>, and doeth <span class="emphasis"><em>it</em></span> not, 
+
+					to him it <span class="emphasis"><em>is</em></span> sin."</p></dd></dl></div></div><div class="sect3" title="6.1.4. Search Options Checkbox"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-search-options"></a>6.1.4. Search Options Checkbox</h4></div></div></div><p>Allows selecting of search options. The only available option 
+
+			is <span class="guibutton">Match case</span>. Check this box to make the 
+
+			search case sensitive.</p></div><div class="sect3" title="6.1.5. Search Scope Selector"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-search-scopeselect"></a>6.1.5. Search Scope Selector</h4></div></div></div><p>Allows defining the range within the specificed module that will
+
+			be searched. There are three search scopes available:</p><div class="variablelist"><dl><dt><span class="term"><span class="guibutton">No scope</span></span></dt><dd><p>This button causes the search to
+
+					to include the entire module.</p></dd><dt><span class="term"><span class="guibutton">Use bounds</span></span></dt><dd><p>Selecting this button produces two dropdown
+
+					selector boxes marked <span class="guilabel">Lower</span> and
+
+					<span class="guilabel">Upper</span>. Select the first book
+
+					to search in the <span class="guilabel">Lower</span> box and
+
+					the last book to search in the <span class="guilabel">Upper</span>
+
+					box. The search will begin with the <span class="guilabel">Lower
+
+					</span> book and end with the <span class="guilabel">Upper
+
+					</span> book and include all books in between.
+
+					</p><p>Chapter and verse numbers can be entered into
+
+					the search bound boxes as well to further narrow the
+
+					search. </p></dd><dt><span class="term"><span class="guibutton">Last search</span></span></dt><dd><p>Select this button to do a new 
+
+					search including only the verses returned as a 
+
+					result of the last search. Use this with a new 
+
+					search key to narrow the search further.</p></dd></dl></div></div><div class="sect3" title="6.1.6. Search Results View"><div class="titlepage"><div><div><h4 class="title"><a id="xiphos-search-results"></a>6.1.6. Search Results View</h4></div></div></div><p>This shows a list of the current search results for previewing, navigation, or saving.</p><div class="variablelist"><dl><dt><span class="term">Preview</span></dt><dd><p>To preview the search result, simply click on an individual result.
+
+					The entry will show in the preview pane.
+
+					</p></dd><dt><span class="term">Navigation</span></dt><dd><p>Navigation to the search result can be done in two ways. To open the result
+
+					in a new tab, middle-click the mouse. To open the result in the current tab, double-click the result.
+
+					</p></dd><dt><span class="term">Save Results</span></dt><dd><p>You may save your results as a list of bookmarks. To do this, right-click and select
+
+					<span class="guilabel">Save List</span>. You will be prompted to enter a name for the folder that your results
+
+					will be saved to. After you have saved the results, you may view them by going to your bookmarks and
+
+					finding the folder you just named.
+
+					</p></dd></dl></div></div></div><div class="sect2" title="6.2. Advanced Searches"><div class="titlepage"><div><div><h3 class="title"><a id="xiphos-advanced-search"></a>6.2. Advanced Searches</h3></div></div></div><p>
+
+		More complicated searches might require the use of the advanced search functions, found under
+
+		<span class="guisubmenu">Edit</span> → <span class="guimenuitem">Advanced Search</span>.
+
+	   </p><div class="figure"><a id="idp7379744"></a><p class="title"><strong>
+
+      شكل 30. The Advanced Search Dialogue</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fa/figures/search_search.png" alt="The Advanced Search Dialog" /></div></div></div></div><br class="figure-break" /><p>
+
+		In <span class="guimenuitem">Advanced Search</span>, much more complex queries can be constructed, involving custom search ranges,
+
+		custom lists of modules over which to search, regular expression matching (see next section), and attribute-based searches
+
+		such as are found in footnotes or Strong's Hebrew and Greek dictionary references.
+
+	   </p><p>
+
+                The default search uses "lucene" fast searching.  It is an optimized search requiring a pre-built index; see the
+
+                <span class="guilabel">Module Manager's</span> Maintenance page for index creation.  In the absence of an index, fallback to the
+
+                slower, plain multi-word search will be done, or can be selected deliberately here.  A web search will provide several
+
+                references to the syntax needed to put to use the power of optimized Lucene search. A few examples follow:
+
+	   </p><p>
+
+		Simple Searches: just type in the words you want to search for. To return only verses that include all of the words,
+
+		prefix the word with "+". So, in the KJV, you could find Psalm 23 by searching for "+Lord +shepherd +want". To search for
+
+		an entire phrase, surround the entire phrase with quotes, like "maketh me to lie down" (note that quotes are unnecessary
+
+		in all of the other examples).
+
+	   </p><p>
+
+		Single Letter Wildcard: to search for "veil" or "vail", use this syntax "v?il". The "?" represents a single character
+
+		that could be anything. A more complex example returns both spellings for Isaiah used in the KJV. "?saia?" will return
+
+		results for "Isaiah" and "Esaias".
+
+	   </p><p>
+
+		Multiple Letter Wildcard: to search for "prophet" or "prophesy" or "prophecy" or "prophesied", use this syntax "prophe*".
+
+	   </p><p>
+
+		AND syntax: in the advanced search to return results for all of the search terms, you must put "AND" in between the terms.
+
+		To continue our example, if we wish to search for any occurrence of Isaiah or Esaias that also mention either prophet, or
+
+		prophecy, or prophesy, we can do a search like this: "?saia? AND prophe*". 
+
+	  </p><p>
+
+		By default, two standard search ranges are defined, for Old and New Testament; you may wish to define others for
+
+		e.g. "Gospels" or "Paul's Epistles". One custom module list containing only the first Bible found will be present.
+
+		If desired, new searches can be performed across only the current results of the previous search.  Any modules may be
+
+		searched, including general books and even dictionaries, in any combination.
+
+	   </p><p>
+
+		Note the tooltip in the screenshot above, for Attributes search.  This qualifier is used to perform searches on attributes
+
+		that are carried with verses, instead of verse content proper, such as footnote content or Strong's Hebrew and Greek
+
+		references.  If this button is selected, specific attribute qualifiers must be made in the Attribute Search tab, at the
+
+		right end of the tab set.  Strong's references are identified with a leading "H" or "G" and the numeric Strong's identifier.
+
+		Thus, a search of KJV for Strong's Greek #140, using "G140", will return the single result of Matthew 12:18.
+
+	   </p><p>
+
+		If you have indexed your modules, there is a much faster way to search for Strong's references. Enter your search preceded by 
+
+		"lemma:", so to search for Strong's Greek #140, enter "lemma:G140". You must have selected <span class="guibutton">Optimized ("Lucene")</span>
+
+		for this to work.
+
+	  </p><p>
+
+		Explanations of search syntax are available when either Optimized or Attribute search is selected.
+
+	   </p><p>
+
+		The "Find" button also stops an in-progress search, as its tooltip indicates.
+
+	   </p><p>
+
+		Results will show in the <span class="guibutton">Results</span> tab. If you wish to show Strongs, Morphology, or Footnote tags,
+
+		make those selections on the <span class="guibutton">Attributes Search</span> tab. Clicking once on the result will show the result
+
+		in the <span class="guibutton">Advanced Search</span> previewer. Hovering over Strongs, Morphology, Footnote, or Cross-reference
+
+		tags will show the results in the main previewer. Double-clicking a result will cause the current tab to navigate to that
+
+		result. This applies to search results in general books and commentaries as well, but note that the respective tab must
+
+		be visible.
+
+	   </p><div class="warning" title="هشدار" style="margin-right: 0.5in; margin-left: 0.5in;"><h3 class="title">هشدار</h3><p>
+
+		 Changes to some of the settings (e.g. scope of search, searched modules, etc.) in Advanced Search will 	affect the simple search via the side pane but not vice versa.
+
+		</p></div></div><div class="sect2" title="6.3. Search Syntax using Regular Expression"><div class="titlepage"><div><div><h3 class="title"><a id="hdbk-op-search-dialog-text-regexp"></a>6.3. Search Syntax using Regular Expression</h3></div></div></div><div class="toc"><dl><dt><span class="sect3"><a href="search.html#hdbk-op-search-dialog-text-regexp-rules">6.3.1. Rules for Regular Expression Search Requests</a></span></dt></dl></div><p>
+
+			Regular expression searches provide a way to do simple or complex searches for strings that match a pattern or set of patterns (branches) separated by vertical bars "|". While a pattern can be built to look for a word or phrase, a simple pattern that consists of a word does not look for only that word but for any place the string of letters that make that word are found. A search for "right" will return verses that contain the word "right", but also "<span class="emphasis"><em>right</em></span>eous", "<span class="emphasis"><em>right</em></span>eousness", "un<span class="emphasis"><em>right</em></span>eous", "up<span class="emphasis"><em>right</em></span>" and even "b<span class="emphasis"><em>right</em></span>". A search for "hall not" is not a search for "hall" AND "not" but for the string "hall not" with a space between the second "l" and the "n". The search for "hall not" will find occurrences of "s<span class="emphasis"><em>hall not</em></span>".
+
+		</p><p>
+
+			The power of Regular Expressions is in the patterns (or templates) used to define a search. A pattern consists of
+
+ordinary characters and some special characters that are used and interpreted by a set of rules. Special characters include
+
+.\[^*$?+. Ordinary (or simple) characters are any characters that are not special. The backslash, "\", is used to convert special characters to ordinary and ordinary characters to special.
+
+		 </p><p>
+
+			Example: the pattern "<span class="emphasis"><em>i. love\.</em></span>" will find sentences that end with "h<span class="emphasis"><em>i</em></span>s <span class="emphasis"><em>love</em></span>" or "<span class="emphasis"><em>i</em></span>n <span class="emphasis"><em>love</em></span>" or "<span class="emphasis"><em>i</em></span>s <span class="emphasis"><em>love</em></span>" followed by
+
+a period. The first period in "i. love\." is a special character that means allow any character in this position. The
+
+backslash in "i. love\." means that the period following it is not to be considered a special character, but is
+
+an ordinary period. 
+
+		</p><div class="sect3" title="6.3.1. Rules for Regular Expression Search Requests"><div class="titlepage"><div><div><h4 class="title"><a id="hdbk-op-search-dialog-text-regexp-rules"></a>6.3.1. Rules for Regular Expression Search Requests</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>. The period matches any character.</p></li><li class="listitem"><p>* The asterisk matches 0 or more characters of the
+
+	preceding: set, character or indicated character.</p></li><li class="listitem"><p>+ The plus sign matches 1 or more characters of the
+
+	preceding: set, character or indicated character.</p></li><li class="listitem"><p>? The question mark matches 0 or 1 character of the
+
+	preceding: set, character or indicated character.</p></li><li class="listitem"><p>[ ] Square brackets match any one of the characters
+
+	specified inside [ ].</p></li><li class="listitem"><p>^ A caret as the first character inside [ ] means NOT.</p></li><li class="listitem"><p>^ A caret beginning a pattern anchors the beginning of a
+
+	line.</p></li><li class="listitem"><p>$ A dollar at the end of a pattern anchors the end of a
+
+	line.</p></li><li class="listitem"><p>| A vertical bar means logical OR.</p></li><li class="listitem"><p>( ) Parentheses enclose expressions for grouping.
+
+<span class="emphasis"><em>Not supported!</em></span></p></li><li class="listitem"><p>\ A backslash can be used prior to any special character
+
+	to match that character.</p></li><li class="listitem"><p>\ A backslash can be used prior to an ordinary character
+
+	to make it a special character.</p></li></ul></div><div class="sect4" title="6.3.1.1. The Period"><div class="titlepage"><div><div><h5 class="title"><a id="period"></a>6.3.1.1. The Period</h5></div></div></div><p>The Period "." will match any single character even
+
+a space or other non-alphabet character.
+
+<span class="emphasis"><em>s.t</em></span> matches <span class="emphasis"><em>s</em></span>i<span class="emphasis"><em>t</em></span>,
+
+<span class="emphasis"><em>s</em></span>e<span class="emphasis"><em>t</em></span>,<span class="emphasis"><em> s</em></span>o<span class="emphasis"><em>t</em></span>,
+
+etc., which could be located in <span class="emphasis"><em>s</em></span>i<span class="emphasis"><em>t</em></span>ting,
+
+compas<span class="emphasis"><em>s</em></span>e<span class="emphasis"><em>t</em></span>h and <span class="emphasis"><em>s</em></span>o<span class="emphasis"><em>t</em></span>tish
+
+<span class="emphasis"><em>b..t</em></span> matches <span class="emphasis"><em>b</em></span>oo<span class="emphasis"><em>t</em></span>,
+
+<span class="emphasis"><em>b</em></span>oa<span class="emphasis"><em>t</em></span> and <span class="emphasis"><em>b</em></span>ea<span class="emphasis"><em>t
+
+foot.tool </em></span>matches <span class="emphasis"><em>foot</em></span>s<span class="emphasis"><em>tool </em></span>and
+
+<span class="emphasis"><em>foot tool</em></span></p></div><div class="sect4" title="6.3.1.2. The Asterisk"><div class="titlepage"><div><div><h5 class="title"><a id="asterisk"></a>6.3.1.2. The Asterisk</h5></div></div></div><p>The asterisk "*" matches zero or more characters of the preceding:
+
+set, character or indicated character. Using
+
+a period asterisk combination ".*" after a commonly
+
+found pattern can cause the search to take a very long time,
+
+making the program seem to freeze.
+
+<span class="emphasis"><em>be*n</em></span> matches<span class="emphasis"><em> beeen, been, ben</em></span>,
+
+and <span class="emphasis"><em>bn</em></span> which could locate Reu<span class="emphasis"><em>ben</em></span>
+
+and She<span class="emphasis"><em>bn</em></span>a.</p></div><div class="sect4" title="6.3.1.3. The Plus Sign"><div class="titlepage"><div><div><h5 class="title"><a id="plus"></a>6.3.1.3. The Plus Sign</h5></div></div></div><p>The Plus Sign "+" matches one or more characters of the preceding:
+
+set, character or indicated character. Using
+
+a period and plus sign combination ".+" after a
+
+commonly found pattern can cause the search to take a very long
+
+time, making the program seem to freeze.
+
+<span class="emphasis"><em>be+n</em></span> matches <span class="emphasis"><em>beeen, been</em></span> and <span class="emphasis"><em>ben</em></span>,
+
+but not <span class="emphasis"><em>bn</em></span>.</p></div><div class="sect4" title="6.3.1.4. The Question Mark"><div class="titlepage"><div><div><h5 class="title"><a id="question"></a>6.3.1.4. The Question Mark</h5></div></div></div><p>The Question Mark "?"matches zero or one character of the
+
+preceding: set, character or indicated character.
+
+<span class="emphasis"><em>be?n</em></span> matches <span class="emphasis"><em>ben</em></span> and <span class="emphasis"><em>bn</em></span>
+
+but not <span class="emphasis"><em>been</em></span>.
+
+<span class="emphasis"><em>trees?</em></span> matches <span class="emphasis"><em>trees</em></span> or <span class="emphasis"><em>tree</em></span>.</p></div><div class="sect4" title="6.3.1.5. The Square Brackets"><div class="titlepage"><div><div><h5 class="title"><a id="bracket"></a>6.3.1.5. The Square Brackets </h5></div></div></div><p>The Square Brackets "[]" enclose a set of characters that can
+
+match. The period, asterisk, plus sign and question mark are not
+
+special inside the brackets. A minus sign can be used to indicate
+
+a range. If you want a caret "^" to be part of the
+
+range do not place it first after the left bracket or it will be
+
+a special character. To include a "]" in the set make
+
+it the first (or second after a special "^") character
+
+in the set. To include a minus sign in the set make it the first
+
+(or second after a special "^") or last character in
+
+the set.
+
+<span class="emphasis"><em>s[eia]t</em></span> matches <span class="emphasis"><em>set</em></span>, <span class="emphasis"><em>sit</em></span>,
+
+and <span class="emphasis"><em>sat</em></span>, but not <span class="emphasis"><em>s</em></span>o<span class="emphasis"><em>t</em></span>.
+
+<span class="emphasis"><em>s[eia]+t </em></span>matches as above but also, <span class="emphasis"><em>seat,
+
+seet, siet</em></span>, etc.
+
+<span class="emphasis"><em>[a-d]</em></span> matches <span class="emphasis"><em>a, b, c,</em></span> or <span class="emphasis"><em>d</em></span>.
+
+<span class="emphasis"><em>[A-Z]</em></span> matches any uppercase letter.
+
+[.;:?!] matches ., ;, :, ?, or ! but not a comma.
+
+[ ]^-] matches ] or ^ or -</p></div><div class="sect4" title="6.3.1.6. The Caret first in Square Brackets"><div class="titlepage"><div><div><h5 class="title"><a id="caret"></a>6.3.1.6. The Caret first in Square Brackets </h5></div></div></div><p>If the Caret is the first character after the left bracket ("[^") it
+
+means NOT.
+
+<span class="emphasis"><em>s[^io]t</em></span> matches <span class="emphasis"><em>set, sat</em></span>, etc.,
+
+but not <span class="emphasis"><em>s</em></span>i<span class="emphasis"><em>t</em></span> and <span class="emphasis"><em>s</em></span>o<span class="emphasis"><em>t</em></span>.</p></div><div class="sect4" title="6.3.1.7. The Caret as Start of Line Anchor"><div class="titlepage"><div><div><h5 class="title"><a id="caret-s"></a>6.3.1.7. The Caret as Start of Line Anchor </h5></div></div></div><p>If the Caret is the first character in a pattern ("^xxx") it anchors
+
+the pattern to the start of a line. Any match must be at the
+
+beginning of a line. Because of unfiltered
+
+formatting characters in some texts, this feature does not always
+
+work, but may if a few periods are placed after the caret to
+
+account for the formatting characters.
+
+<span class="emphasis"><em>^In the beginning</em></span> matches lines that
+
+start with "<span class="emphasis"><em>In the beginning</em></span>".
+
+(May need to use: <span class="emphasis"><em>^.....In the beginning</em></span>)</p></div><div class="sect4" title="6.3.1.8. The Dollar Sign as End of Line Anchor"><div class="titlepage"><div><div><h5 class="title"><a id="dollar"></a>6.3.1.8. The Dollar Sign as End of Line Anchor </h5></div></div></div><p>If the Dollar Sign is the last character ("xxx$") in a pattern it
+
+anchors the pattern to the end of a line. Any match must be at
+
+the end of a line. Because of unfiltered
+
+formatting characters in some texts, this feature does not always
+
+work, but may if a few periods are placed before the dollar sign
+
+to account for the formatting characters.
+
+<span class="emphasis"><em>Amen\.$</em></span> matches lines that end with
+
+"<span class="emphasis"><em>Amen.</em></span>" (May
+
+need to use Amen\....$, Amen\..........$, or even
+
+Amen\....................$)</p></div><div class="sect4" title="6.3.1.9. The Vertical Bar"><div class="titlepage"><div><div><h5 class="title"><a id="bar"></a>6.3.1.9. The Vertical Bar </h5></div></div></div><p>The Vertical Bar "|" between patterns means OR.
+
+<span class="emphasis"><em>John|Peter</em></span> matches <span class="emphasis"><em>John</em></span> or <span class="emphasis"><em>Peter.
+
+John .*Peter|Peter .*John</em></span> matches <span class="emphasis"><em>John</em></span>
+
+... <span class="emphasis"><em>Peter</em></span> or <span class="emphasis"><em>Peter</em></span> ... <span class="emphasis"><em>John</em></span>.
+
+(.* slows a search)
+
+<span class="emphasis"><em>pain|suffering|sorrow</em></span> matches <span class="emphasis"><em>pain</em></span>,
+
+or <span class="emphasis"><em>suffering</em></span>, or <span class="emphasis"><em>sorrow</em></span>.</p></div><div class="sect4" title="6.3.1.10. The Parentheses"><div class="titlepage"><div><div><h5 class="title"><a id="parenth"></a>6.3.1.10. The Parentheses</h5></div></div></div><p><span class="emphasis"><em>The use of Parentheses "( )" is
+
+not supported!</em></span></p></div><div class="sect4" title="6.3.1.11. The Backslash Prior to a Special Character"><div class="titlepage"><div><div><h5 class="title"><a id="backslash"></a>6.3.1.11. The Backslash Prior to a Special Character</h5></div></div></div><p>The Backslash prior to a special character ("\*") indicates that the
+
+character is not being used in its special meaning, but is just
+
+to match itself.
+
+<span class="emphasis"><em>amen\.</em></span> matches <span class="emphasis"><em>amen.</em></span> but not <span class="emphasis"><em>amen</em></span>t
+
+and will not locate firm<span class="emphasis"><em>amen</em></span>t.</p></div><div class="sect4" title="6.3.1.12. The Backslash Prior to an Ordinary Character"><div class="titlepage"><div><div><h5 class="title"><a id="backslash-o"></a>6.3.1.12. The Backslash Prior to an Ordinary Character </h5></div></div></div><p>The Backslash prior to an ordinary character ("\o") indicates that
+
+the character is not being used to match itself, but has special
+
+meaning.</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>
+
+\b if use outside [ ] means word boundary. If used inside [ ] means backspace.
+
+<span class="emphasis"><em>\brighteous\b</em></span> matches <span class="emphasis"><em>righteous</em></span> but
+
+not un<span class="emphasis"><em>righteous</em></span> or <span class="emphasis"><em>righteous</em></span>ness</p></li><li class="listitem"><p>\B means non-word boundary.  <span class="emphasis"><em>\Brighteous\B</em></span>
+
+matches un<span class="emphasis"><em>righteous</em></span>ness and un<span class="emphasis"><em>righteous</em></span>ly
+
+but not <span class="emphasis"><em>righteous</em></span>, un<span class="emphasis"><em>righteous</em></span> or <span class="emphasis"><em>
+
+righteous</em></span>ness.</p></li><li class="listitem"><p>\d means digit; same as [0-9].</p></li><li class="listitem"><p>\D means non-digit, same as [^0-9].</p></li><li class="listitem"><p>\s means space. </p></li><li class="listitem"><p>\S means not a space. </p></li><li class="listitem"><p>\w means alphanumeric; same as [a-zA-Z0-9_].</p></li><li class="listitem"><p>\W means not alphanumeric; same as [^a-zA-Z0-9_].</p></li></ul></div></div></div></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="right"><a accesskey="p" href="module-manager.html">قبلی</a> </td><td width="20%" align="center"> </td><td width="40%" align="left"> <a accesskey="n" href="studypad.html">بعدی</a></td></tr><tr><td width="40%" align="right" valign="top">5. Module Manager </td><td width="20%" align="center"><a accesskey="h" href="index.html">خانه</a></td><td width="40%" align="left" valign="top"> 7. The Studypad</td></tr></table></div>
+</div>
+
+</div>
+<div id="footer">
+
+
+Copyright © 2000-2020, The Xiphos Developer Team
+</div>
+
+
+</body>
+</html>
+
+

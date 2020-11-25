@@ -1,0 +1,266 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb">
+<head>
+<title>Xiphos -- Open Source Bible Study Software
+Manuel de Xiphos :
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="../../media/images/favicon.ico" />
+<!-- Will create separate css file later? -->
+<style type="text/css">
+html{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	margin: 0px 0px 0px 245px;
+	padding: 0px;
+	background-color: #369;
+	color: white;
+	font-family: Georgia, serif;
+	background-image: url(../../media/images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: 245px 0px;
+}
+div#footer{
+	margin-top: 120px;
+	padding: 10px;
+	border-top: 1px solid white;
+	text-align: center;
+}
+div#content{
+	padding-left: 30px;
+	padding-right: 20px;
+}
+div#side{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+a{
+	color: #CCF;
+}
+a img{
+	border: 0;
+}
+hr{
+	height: 1px;
+	color: #CCF;
+	background-color: #CCF;
+	border: 0px solid #CCF;
+}
+img.photo{
+	border: 10px solid white;
+}
+div.menu{
+	background-color: #147;
+	border-bottom: 1px solid white;
+}
+div.menu h1{
+	margin: 0px;
+	float: left;
+	padding-left: 20px;
+}
+ul.menu{
+	margin: 0px;
+	padding: 10px;
+	display: block;
+	text-align: right;
+}
+ul.menu li{
+	display: inline;
+	padding: 10px;
+}
+a.menu{
+	text-decoration: none;
+	font-weight: bold;
+}
+a.menu:hover{
+	color: white;
+	text-decoration: underline;
+}
+span.last_modified{
+	color: #CCF;
+}
+#download_button{
+background-image: url(../../media/images/147-369-50.gif); background-repeat: repeat-x; background-color: #369; background-position: top; color: white; border: 1px solid #FFF; width: 30%; text-align: center; padding: 20px 0px; width:100%; margin-bottom: 20px;
+}
+#download_button a{
+font-size: 150%; font-weight: bold
+}
+#button_and_screenshot{
+float: right;
+width: 409px;
+padding: 0px 0px 20px 20px;
+}
+
+#manual_toc{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 5px; 
+	border: 1px solid #CCF; 
+	width: 220px;
+	margin: 7px 20px 20px 7px;
+}
+#manual_content{
+/*margin-left: 23%;*/
+}
+#manual_toc ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+#manual_toc li{
+	padding: 3px;
+	margin: 0px;
+}
+#manual_toc li.even{
+	background-color: #258;
+}
+#manual_toc li.odd{
+	background-color: #369;
+}
+.guisubmenu{
+	font-weight: bold;
+}
+.guimenuitem{
+	font-weight: bold;
+	font-style: italic;
+}
+.application{
+	font-weight: bold;
+	font-style: italic;
+}
+.command{
+	font-family: courier;
+	font-weight: bold;
+}
+.interface{
+	font-weight: bold;
+	font-style: italic;
+}
+div.titlepage{
+	margin-top: 50px;
+}
+div.figure{
+	border: 1px solid #CCF; /*#58B;*/
+	padding: 5px;
+}
+div.tip, div.warning{
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	padding: 5px;
+	padding-left: 90px;	
+	border: 3px solid #147;
+	background-color: #258;
+
+}
+div.tip h3, div.warning h3{
+	display: none;
+}
+div.tip{
+	background-image: url(../../media/images/info.png);
+}
+div.warning{
+	background-image: url(../../media/images/important.png);
+}
+h3.title{
+	background-color: #CCF;
+	padding: 5px;
+	color: #369;
+}
+div.authorgroup{
+	padding-left: 20px;
+}
+h4{
+	border-bottom: 1px solid #CCF;
+}
+div#manual_html_link{
+	background-color: #258;
+	padding: 5px;
+	margin: 5px 0px;
+}
+
+</style>
+</head>
+<body>
+<div id="side"><img src="../../media/images/side.jpg" alt="Xiphos Bible" /></div>
+<div class="menu">
+<h1>Xiphos</h1>
+<ul class="menu">
+<li class="menu"><a class="menu" href="../../index.html">Home</a></li> <li class="menu"><a class="menu" href="../../about/index.html">About</a></li> <li class="menu"><a class="menu" href="../../download/index.html">Download</a></li> <li class="menu"><a class="menu" href="../../help/index.html">Help</a></li> <li class="menu"><a class="menu" href="https://xiphos.org/manual/">Documentation</a></li> <li class="menu"><a class="menu" href="../../development/index.html">Development</a></li> <li class="menu"><a class="menu" href="../../links/index.html">Links</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<div id="content">
+
+<div id="manual_toc">
+<a href="../../index.html"><img src="../../media/images/xiphos_200.png" alt="Xiphos Logo"></a><br />
+<ul>
+
+<li class="odd"><a href="https://xiphos.org/manual/fr/">Manuel de Xiphos :</a></li>
+
+<li class="even"><a href="xiphos-introduction.html">1. Introduction</a></li>
+
+<li class="odd"><a href="familiar.html">2. Premiers pas</a></li>
+
+<li class="even"><a href="interface.html">3. Interface</a></li>
+
+<li class="odd"><a href="preferences.html">4. Préférences</a></li>
+
+<li class="even"><a href="module-manager.html">5. Gérer les modules</a></li>
+
+<li class="odd"><a href="search.html">6. Fonctions de recherche</a></li>
+
+<li class="even"><a href="studypad.html">7. Bloc-notes</a></li>
+
+<li class="odd"><a href="personal.html">8. Commentaires personnels</a></li>
+
+<li class="even"><a href="journals.html">9. Listes de prières et Journaux</a></li>
+
+<li class="odd"><a href="onlinehelp.html">10. Obtenir de l&#39;aide en ligne</a></li>
+
+<li class="even"><a href="originallanguage.html">11. Étude des textes originaux</a></li>
+
+</ul>
+
+<br/>
+<ul>
+
+
+
+
+<li class="odd"><a href="https://xiphos.org/manual/">English</a></li>
+
+
+
+<li class="even"><a href="https://xiphos.org/manual/fa/">Persian</a></li>
+
+
+</ul>
+</div>
+<div id="manual_content">
+<hr />
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Manuel de <span class="application">Xiphos</span> :</th></tr><tr><td width="20%" align="left"> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="xiphos-introduction.html">Suivant</a></td></tr></table><hr /></div><div xml:lang="fr" class="article" title="Manuel de Xiphos :" lang="fr"><div class="titlepage"><div><div><h2 class="title"><a id="index"></a>Manuel de <span class="application">Xiphos</span> :</h2></div><div><div class="authorgroup"><div class="author"><h3 class="author"><span class="firstname">Andy</span> <span class="surname">Piper</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Pierre</span> <span class="surname">Benz</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Dr Peter</span> <span class="surname">von Kaehne</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Karl</span> <span class="surname">Kleinpaste</span></h3></div><div class="author"><h3 class="author"><span class="firstname">Matthew</span> <span class="surname">Talbert</span></h3></div><div class="othercredit"><h3 class="othercredit"><span class="firstname">Dominique</span> <span class="surname">Corbex</span></h3><span class="contrib">Traduction française</span> <div class="affiliation"><span class="orgname">L'équipe de développement Xiphos<br /></span></div></div></div></div><div><p class="releaseinfo">Ce manuel documente la version 4.0.0 de <span class="application">Xiphos</span></p></div><div><p class="copyright">Copyright © 2003, 2010 L'équipe de développement Xiphos</p></div><div><div class="legalnotice" title="Votre avis"><a id="idp18071736"></a><p class="legalnotice-title"><strong>Votre avis</strong></p><p>Pour obtenir plus d'informations sur <span class="application">Xiphos</span>, visitez le site web du projet à <a class="ulink" href="../../index.html" target="_top">http://xiphos.org</a>.</p><p>Les rapports de bogue ou les suggestions à propos de Xiphos ou de ce manuel d'aide sont à envoyer au <a class="ulink" href="https://sourceforge.net/tracker/?group_id=5528" target="_top">Tracker de SourceForge</a>  ou à la liste de diffusion <code class="email">&lt;<a class="email" href="mailto:gnomesword-developers@lists.sourceforge.net">gnomesword-developers@lists.sourceforge.net</a>&gt;</code></p></div></div><div><div class="legalnotice" title="Note légale"><a id="legalnotice"></a><p>L'autorisation de copier, distribuer et/ou modifier le présent document est soumise aux conditions de la licence relative à la documentation gratuite GNU (GPL), version 2 ou toute version publiée ultérieurement par la Free Software Foundation. Vous pouvez trouver une copie de cette licence à l'adresse suivante : <a class="ulink" href="ghelp:fdl" target="_top">lien</a> ou dans le fichier COPYING distribué avec le présent manuel.</p><p>LA DISTRIBUTION DU PRÉSENT DOCUMENT ET DES VERSIONS MODIFIÉES DE CELUI-CI EST RÉGIE  PAR LA LICENCE RELATIVE À LA DOCUMENTATION GRATUITE GNU, CE QUI IMPLIQUE QUE :</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>CE DOCUMENT EST FOURNI "TEL QUEL", SANS AUCUNE GARANTIE, EXPLICITE OU IMPLICITE, Y COMPRIS, SANS LIMITATION, TOUTE GARANTIE ASSURANT QUE LE DOCUMENT OU LA VERSION MODIFIÉE DE CELUI-CI EST EXEMPT DE DÉFAUTS, COMMERCIALISABLE, ADAPTÉ À UN USAGE DONNÉ ET N'EST CONTRAIRE À AUCUNE LÉGISLATION. VOUS ASSUMEZ L'ENSEMBLE DES RISQUES ASSOCIÉS À LA QUALITÉ, A L'EXACTITUDE ET A LA PERFORMANCE DU PRÉSENT DOCUMENT OU D'UNE VERSION MODIFIÉE DE CELUI-CI. SI LE DOCUMENT OU UNE VERSION MODIFIÉE DE CELUI-CI DEVAIT S'AVÉRER DÉFECTUEUX A QUELQUE ÉGARD, VOUS (ET NON LE RÉDACTEUR INITIAL, L'AUTEUR OU TOUT AUTRE CONTRIBUTEUR) ASSUMEZ LES COÛTS DE TOUTE MAINTENANCE, RÉPARATION OU CORRECTION NÉCESSAIRE. LA PRÉSENTE CLAUSE DE NON-RESPONSABILITÉ EN MATIÈRE DE GARANTIE CONSTITUE UNE PARTIE ESSENTIELLE DE LA PRÉSENTE LICENCE. AUCUNE UTILISATION DU PRÉSENT DOCUMENT OU D'UNE VERSION MODIFIÉE DE CELUI-CI N'EST AUTORISÉE AU TITRE DE LA PRÉSENTE LICENCE SANS APPLICATION DE LA CLAUSE DE NON-RESPONSABILITÉ.</p></li><li class="listitem"><p>PAR AILLEURS, EN AUCUN CAS ET AU TITRE D'AUCUNE THÉORIE JURIDIQUE, QUE CE SOIT EN VERTU D'UN PRÉJUDICE (EN CE COMPRISE LA NÉGLIGENCE), D'UN CONTRAT OU D'UNE QUELCONQUE AUTRE RAISON, L'AUTEUR, LE RÉDACTEUR INITIAL, TOUT AUTRE CONTRIBUTEUR OU DISTRIBUTEUR DU PRÉSENT DOCUMENT OU D'UNE VERSION MODIFIÉE DE CELUI-CI, OU TOUT FOURNISSEUR D'UNE TELLE PARTIE, NE POURRA ÊTRE TENU POUR RESPONSABLE PAR UN TIERS DE TOUT DOMMAGE DIRECT, INDIRECT, SPÉCIAL, ACCIDENTEL OU CONSÉCUTIF QUEL QU'EN SOIT LE CARACTÈRE, Y COMPRIS, SANS LIMITATION, LES DOMMAGES CAUSÉS PAR UNE PERTE DE CLIENTÈLE, D'ARRÊT DE TRAVAIL, DE PANNE OU DE DYSFONCTIONNEMENT INFORMATIQUE OU POUR TOUT AUTRE DOMMAGE OU PERTE DÉCOULANT DE OU ASSOCIÉ À L'UTILISATION DU PRÉSENT DOCUMENT OU DE VERSIONS MODIFIÉES DE CELUI-CI, ET CE, MÊME SI LADITE PARTIE A ÉTÉ INFORMÉE DE LA POSSIBILITÉ DE TELS DOMMAGES.</p></li></ol></div></div></div><div><div class="revhistory"><table border="1" width="100%" summary="Revision history"><tr><th align="left" valign="top" colspan="2"><strong>Historique des versions</strong></th></tr><tr><td align="left">Version Manuel de Xiphos 4.0.0</td><td align="left">Décembre 2014</td></tr><tr><td align="left" colspan="2"> 
+
+             <p class="author">L'équipe de développement Xiphos</p>
+
+             <p class="publisher">L'équipe de développement Xiphos</p>
+
+          </td></tr></table></div></div><div><div class="abstract" title="Résumé"><p class="title"><strong>Résumé</strong></p><p><span class="application">Xiphos</span> est un logiciel d'aide à l'étude biblique.</p></div></div></div><hr /></div><div class="toc"><p><strong>Table des matières</strong></p><dl><dt><span class="sect1"><a href="xiphos-introduction.html">1. Introduction</a></span></dt><dt><span class="sect1"><a href="familiar.html">2. Premiers pas</a></span></dt><dd><dl><dt><span class="sect2"><a href="familiar.html#xiphos-getting-started">2.1. Démarrer Xiphos</a></span></dt><dt><span class="sect2"><a href="familiar.html#xiphos-first-start">2.2. Démarrer Xiphos la première fois</a></span></dt><dt><span class="sect2"><a href="familiar.html#xiphos-when-you-start">2.3. Démarrer Xiphos</a></span></dt></dl></dd><dt><span class="sect1"><a href="interface.html">3. Interface</a></span></dt><dd><dl><dt><span class="sect2"><a href="interface.html#menubar">3.1. Barre de menu</a></span></dt><dt><span class="sect2"><a href="interface.html#toolbars">3.2. Barres d'outils</a></span></dt><dt><span class="sect2"><a href="interface.html#xiphos-sidebar">3.3. La barre d'outils</a></span></dt><dt><span class="sect2"><a href="interface.html#xiphos-bible">3.4. Le volet des textes bibliques</a></span></dt><dt><span class="sect2"><a href="interface.html#xiphos-viewer">3.5. Aperçu</a></span></dt><dt><span class="sect2"><a href="interface.html#xiphos-commentaries">3.6. Le volet des commentaires</a></span></dt><dt><span class="sect2"><a href="interface.html#xiphos-dictionary">3.7. Volet dictionnaire</a></span></dt><dt><span class="sect2"><a href="interface.html#xiphos-shortcut">3.8. Raccourcis clavier</a></span></dt></dl></dd><dt><span class="sect1"><a href="preferences.html">4. Préférences</a></span></dt><dd><dl><dt><span class="sect2"><a href="preferences.html#preferences-introduction">4.1. Introduction aux préférences</a></span></dt><dt><span class="sect2"><a href="preferences.html#general-settings">4.2. Préférences générales</a></span></dt><dt><span class="sect2"><a href="preferences.html#biblesync">4.3. Configuration de BibleSync</a></span></dt><dt><span class="sect2"><a href="preferences.html#fonts-and-colors">4.4. Polices et couleurs</a></span></dt><dt><span class="sect2"><a href="preferences.html#module-settings">4.5. Configuration des modules</a></span></dt></dl></dd><dt><span class="sect1"><a href="module-manager.html">5. Gérer les modules</a></span></dt><dd><dl><dt><span class="sect2"><a href="module-manager.html#module-introduction">5.1. Introduction à la gestion des modules</a></span></dt><dt><span class="sect2"><a href="module-manager.html#sword-config">5.2. Configuration des modules de Sword</a></span></dt><dt><span class="sect2"><a href="module-manager.html#module-management">5.3. Installer, mettre à jour et maintenir les modules</a></span></dt><dt><span class="sect2"><a href="module-manager.html#non-standard-modules">5.4. Installer des modules manuellement</a></span></dt></dl></dd><dt><span class="sect1"><a href="search.html">6. Fonctions de recherche</a></span></dt><dd><dl><dt><span class="sect2"><a href="search.html#xiphos-searchpane">6.1. Recherche simple</a></span></dt><dt><span class="sect2"><a href="search.html#xiphos-advanced-search">6.2. Recherche avancée</a></span></dt><dt><span class="sect2"><a href="search.html#hdbk-op-search-dialog-text-regexp">6.3. Syntaxe des expressions rationnelles utilisées en clé de recherche</a></span></dt></dl></dd><dt><span class="sect1"><a href="studypad.html">7. Bloc-notes</a></span></dt><dd><dl><dt><span class="sect2"><a href="studypad.html#xiphos-studypad">7.1. Usage du bloc-notes :</a></span></dt></dl></dd><dt><span class="sect1"><a href="personal.html">8. Commentaires personnels</a></span></dt><dt><span class="sect1"><a href="journals.html">9. Listes de prières et Journaux</a></span></dt><dt><span class="sect1"><a href="onlinehelp.html">10. Obtenir de l'aide en ligne</a></span></dt><dd><dl><dt><span class="sect2"><a href="onlinehelp.html#xiphos-mailing-list">10.1. Liste de diffusion des utilisateurs</a></span></dt><dt><span class="sect2"><a href="onlinehelp.html#xiphos-live-chat">10.2. Discussion en ligne</a></span></dt></dl></dd><dt><span class="sect1"><a href="originallanguage.html">11. Étude des textes originaux</a></span></dt><dd><dl><dt><span class="sect2"><a href="originallanguage.html#orig-lang-install-modules">11.1. Installer les modules nécessaires</a></span></dt><dt><span class="sect2"><a href="originallanguage.html#orig-lang-setup">11.2. Configurer</a></span></dt><dt><span class="sect2"><a href="originallanguage.html#orig-lang-search">11.3. Rechercher des Nombres de Strong</a></span></dt><dt><span class="sect2"><a href="originallanguage.html#orig-lang-additional">11.4. Modules additionnels</a></span></dt></dl></dd></dl></div><a id="idp16130136" class="indexterm"></a></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="xiphos-introduction.html">Suivant</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"> </td><td width="40%" align="right" valign="top"> 1. Introduction</td></tr></table></div>
+</div>
+
+</div>
+<div id="footer">
+
+
+Copyright © 2000-2020, The Xiphos Developer Team
+</div>
+
+
+</body>
+</html>
+
+

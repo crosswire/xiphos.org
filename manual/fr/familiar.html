@@ -1,0 +1,278 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb">
+<head>
+<title>Xiphos -- Open Source Bible Study Software
+2. Premiers pas
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="../../media/images/favicon.ico" />
+<!-- Will create separate css file later? -->
+<style type="text/css">
+html{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	margin: 0px 0px 0px 245px;
+	padding: 0px;
+	background-color: #369;
+	color: white;
+	font-family: Georgia, serif;
+	background-image: url(../../media/images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: 245px 0px;
+}
+div#footer{
+	margin-top: 120px;
+	padding: 10px;
+	border-top: 1px solid white;
+	text-align: center;
+}
+div#content{
+	padding-left: 30px;
+	padding-right: 20px;
+}
+div#side{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+a{
+	color: #CCF;
+}
+a img{
+	border: 0;
+}
+hr{
+	height: 1px;
+	color: #CCF;
+	background-color: #CCF;
+	border: 0px solid #CCF;
+}
+img.photo{
+	border: 10px solid white;
+}
+div.menu{
+	background-color: #147;
+	border-bottom: 1px solid white;
+}
+div.menu h1{
+	margin: 0px;
+	float: left;
+	padding-left: 20px;
+}
+ul.menu{
+	margin: 0px;
+	padding: 10px;
+	display: block;
+	text-align: right;
+}
+ul.menu li{
+	display: inline;
+	padding: 10px;
+}
+a.menu{
+	text-decoration: none;
+	font-weight: bold;
+}
+a.menu:hover{
+	color: white;
+	text-decoration: underline;
+}
+span.last_modified{
+	color: #CCF;
+}
+#download_button{
+background-image: url(../../media/images/147-369-50.gif); background-repeat: repeat-x; background-color: #369; background-position: top; color: white; border: 1px solid #FFF; width: 30%; text-align: center; padding: 20px 0px; width:100%; margin-bottom: 20px;
+}
+#download_button a{
+font-size: 150%; font-weight: bold
+}
+#button_and_screenshot{
+float: right;
+width: 409px;
+padding: 0px 0px 20px 20px;
+}
+
+#manual_toc{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 5px; 
+	border: 1px solid #CCF; 
+	width: 220px;
+	margin: 7px 20px 20px 7px;
+}
+#manual_content{
+/*margin-left: 23%;*/
+}
+#manual_toc ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+#manual_toc li{
+	padding: 3px;
+	margin: 0px;
+}
+#manual_toc li.even{
+	background-color: #258;
+}
+#manual_toc li.odd{
+	background-color: #369;
+}
+.guisubmenu{
+	font-weight: bold;
+}
+.guimenuitem{
+	font-weight: bold;
+	font-style: italic;
+}
+.application{
+	font-weight: bold;
+	font-style: italic;
+}
+.command{
+	font-family: courier;
+	font-weight: bold;
+}
+.interface{
+	font-weight: bold;
+	font-style: italic;
+}
+div.titlepage{
+	margin-top: 50px;
+}
+div.figure{
+	border: 1px solid #CCF; /*#58B;*/
+	padding: 5px;
+}
+div.tip, div.warning{
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	padding: 5px;
+	padding-left: 90px;	
+	border: 3px solid #147;
+	background-color: #258;
+
+}
+div.tip h3, div.warning h3{
+	display: none;
+}
+div.tip{
+	background-image: url(../../media/images/info.png);
+}
+div.warning{
+	background-image: url(../../media/images/important.png);
+}
+h3.title{
+	background-color: #CCF;
+	padding: 5px;
+	color: #369;
+}
+div.authorgroup{
+	padding-left: 20px;
+}
+h4{
+	border-bottom: 1px solid #CCF;
+}
+div#manual_html_link{
+	background-color: #258;
+	padding: 5px;
+	margin: 5px 0px;
+}
+
+</style>
+</head>
+<body>
+<div id="side"><img src="../../media/images/side.jpg" alt="Xiphos Bible" /></div>
+<div class="menu">
+<h1>Xiphos</h1>
+<ul class="menu">
+<li class="menu"><a class="menu" href="../../index.html">Home</a></li> <li class="menu"><a class="menu" href="../../about/index.html">About</a></li> <li class="menu"><a class="menu" href="../../download/index.html">Download</a></li> <li class="menu"><a class="menu" href="../../help/index.html">Help</a></li> <li class="menu"><a class="menu" href="https://xiphos.org/manual/">Documentation</a></li> <li class="menu"><a class="menu" href="../../development/index.html">Development</a></li> <li class="menu"><a class="menu" href="../../links/index.html">Links</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<div id="content">
+
+<div id="manual_toc">
+<a href="../../index.html"><img src="../../media/images/xiphos_200.png" alt="Xiphos Logo"></a><br />
+<ul>
+
+<li class="odd"><a href="https://xiphos.org/manual/fr/">Manuel de Xiphos :</a></li>
+
+<li class="even"><a href="xiphos-introduction.html">1. Introduction</a></li>
+
+<li class="odd"><a href="familiar.html">2. Premiers pas</a></li>
+
+<li class="even"><a href="interface.html">3. Interface</a></li>
+
+<li class="odd"><a href="preferences.html">4. Préférences</a></li>
+
+<li class="even"><a href="module-manager.html">5. Gérer les modules</a></li>
+
+<li class="odd"><a href="search.html">6. Fonctions de recherche</a></li>
+
+<li class="even"><a href="studypad.html">7. Bloc-notes</a></li>
+
+<li class="odd"><a href="personal.html">8. Commentaires personnels</a></li>
+
+<li class="even"><a href="journals.html">9. Listes de prières et Journaux</a></li>
+
+<li class="odd"><a href="onlinehelp.html">10. Obtenir de l&#39;aide en ligne</a></li>
+
+<li class="even"><a href="originallanguage.html">11. Étude des textes originaux</a></li>
+
+</ul>
+
+<br/>
+<ul>
+
+
+
+
+<li class="odd"><a href="https://xiphos.org/manual/">English</a></li>
+
+
+
+<li class="even"><a href="https://xiphos.org/manual/fa/">Persian</a></li>
+
+
+</ul>
+</div>
+<div id="manual_content">
+<hr />
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Premiers pas</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="xiphos-introduction.html">Précédent</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="interface.html">Suivant</a></td></tr></table><hr /></div><div class="sect1" title="2. Premiers pas"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="familiar"></a>2. Premiers pas</h2></div></div></div><div class="toc"><dl><dt><span class="sect2"><a href="familiar.html#xiphos-getting-started">2.1. Démarrer Xiphos</a></span></dt><dt><span class="sect2"><a href="familiar.html#xiphos-first-start">2.2. Démarrer Xiphos la première fois</a></span></dt><dt><span class="sect2"><a href="familiar.html#xiphos-when-you-start">2.3. Démarrer Xiphos</a></span></dt></dl></div><div class="sect2" title="2.1. Démarrer Xiphos"><div class="titlepage"><div><div><h3 class="title"><a id="xiphos-getting-started"></a>2.1. Démarrer Xiphos</h3></div></div></div><p>Vous pouvez démarrer <span class="application">Xiphos</span> en utilisant l'une des méthodes suivantes :</p><div class="variablelist"><dl><dt><span class="term">Menu applications</span></dt><dd><p>Sélectionnez <span class="guisubmenu">Éducation</span> → <span class="guimenuitem">Guide de la Bible Xiphos</span>.</p></dd><dt><span class="term">Ligne de commande</span></dt><dd><p>Entrez <span class="command"><strong>xiphos</strong></span>, puis appuyez sur <span class="keycap"><strong>Entrée</strong></span>.</p></dd><dt><span class="term">Windows</span></dt><dd><p>Sélectionnez <span class="guisubmenu">Tous les programmes</span> → <span class="guisubmenu">Xiphos·</span> → <span class="guimenuitem">Xiphos</span>.</p></dd></dl></div></div><div class="sect2" title="2.2. Démarrer Xiphos la première fois"><div class="titlepage"><div><div><h3 class="title"><a id="xiphos-first-start"></a>2.2. Démarrer Xiphos la première fois</h3></div></div></div><p>Au démarrage de <span class="application">Xiphos</span> la première fois, 
+
+<span class="application">Xiphos</span> crée une configuration par défaut des 
+
+options d'affichage. De plus, si aucune autre application Sword n'a jamais 
+
+été utilisée auparavant, et donc aucun module Sword n'a pu être installé, 
+
+<span class="application">Xiphos</span> démarre le gestionnaire de modules afin 
+
+de permettre de choisir et installer un module de textes bibliques dans la 
+
+langue souhaitée.</p><div class="figure"><a id="xiphos-start-question"></a><p class="title"><strong>Figure 3. Demande de permission de téléchargement par <span class="application">Xiphos</span></strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fr/figures/first_start.png" alt="figures/first-start.png" /></div></div></div></div><br class="figure-break" /><p><span class="application">Xiphos</span> s'ouvre ensuite sur le texte de Romains 8:28 dans un premier onglet. Une fois la fenêtre affichée, il est possible de modifier les options de <span class="application">Xiphos</span> en sélectionnant <span class="guimenuitem">Éditer</span> → <span class="guimenuitem">Préférences</span>.</p></div><div class="sect2" title="2.3. Démarrer Xiphos"><div class="titlepage"><div><div><h3 class="title"><a id="xiphos-when-you-start"></a>2.3. Démarrer Xiphos</h3></div></div></div><p>Au démarrage de <span class="application">Xiphos</span>, la fenêtre  suivante est affichée :</p><div class="figure"><a id="xiphos-start-interface"></a><p class="title"><strong>Figure 4. Interface de Xiphos</strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fr/figures/interface.png" alt="L'interface de Xiphos" /></div></div></div></div><br class="figure-break" /><p>La fenêtre de <span class="application">Xiphos</span> contient les éléments suivants :</p><div class="variablelist"><dl><dt><span class="term">Barre de menu</span></dt><dd><p>La <span class="interface">Barre de menu</span> permet d'accéder aux fonctions complémentaires de <span class="application">Xiphos</span>, comme le bloc-notes où la recherche avancée. Elle permet également d'ajuster les préférences de <span class="application">Xiphos</span>.</p></dd><dt><span class="term">Barre d'outils</span></dt><dd><p>La <span class="interface">Barre d'outils</span> contient des boutons permettant de naviguer rapidement dans le texte biblique.</p></dd><dt><span class="term">Volet latéral</span></dt><dd><p>Le <span class="interface">Volet latéral</span> présente plusieurs fonctions. Il contient la liste des modules installés, les signets définis par l'utilisateur et il permet d'exécuter des recherches simples.</p></dd><dt><span class="term">Textes bibliques</span></dt><dd><p>Le volet des<span class="interface"> Textes bibliques</span> affiche le texte biblique sélectionné.</p></dd><dt><span class="term">Aperçu</span></dt><dd><p>Le volet <span class="interface">Aperçu</span> affiche les textes complémentaires des modules de textes bibliques. Ces textes comprennent les nombres de Strong, les notes de bas de page et les étiquettes morphologiques. Il est situé en-dessous du volet des textes bibliques.</p></dd><dt><span class="term">Commentaire</span></dt><dd><p>Le volet <span class="interface">Commentaire</span> affiche le commentaire relatif au verset sélectionné.</p></dd><dt><span class="term">Livre</span></dt><dd><p>Le volet <span class="interface">Livre</span> affiche le texte de livres disponibles auprès du Projet SWORD. Ces modules comprennent des textes comme "Calvin's Institutes", "Josephus: The Complete Works" etc. Ce volet est accessible via l'onglet Livre, en dessous du volet Commentaire.</p></dd><dt><span class="term">Dictionnaire</span></dt><dd><p>Le volet <span class="interface">Dictionnaire</span> situé en-dessous du volet <span class="interface">Commentaire</span> affiche la définition des mots sélectionnés dans le volet des<span class="interface"> Textes bibliques</span>.</p></dd></dl></div><p>Un clic du bouton droit de la souris dans les différents volets de l'interface 
+
+de <span class="application">Xiphos</span> fait apparaître un menu contextuel, 
+
+il permet d'accéder aux options spécifiques du module concerné, comprenant les 
+
+options d'affichage et les services d'impression.</p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="xiphos-introduction.html">Précédent</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="interface.html">Suivant</a></td></tr><tr><td width="40%" align="left" valign="top">1. Introduction </td><td width="20%" align="center"><a accesskey="h" href="index.html">Sommaire</a></td><td width="40%" align="right" valign="top"> 3. Interface</td></tr></table></div>
+</div>
+
+</div>
+<div id="footer">
+
+
+Copyright © 2000-2020, The Xiphos Developer Team
+</div>
+
+
+</body>
+</html>
+
+

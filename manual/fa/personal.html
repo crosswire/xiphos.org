@@ -1,0 +1,378 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb">
+<head>
+<title>Xiphos -- Open Source Bible Study Software
+8. The Personal Commentary
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="../../media/images/favicon.ico" />
+<!-- Will create separate css file later? -->
+<style type="text/css">
+html{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	margin: 0px 0px 0px 245px;
+	padding: 0px;
+	background-color: #369;
+	color: white;
+	font-family: Georgia, serif;
+	background-image: url(../../media/images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: 245px 0px;
+}
+div#footer{
+	margin-top: 120px;
+	padding: 10px;
+	border-top: 1px solid white;
+	text-align: center;
+}
+div#content{
+	padding-left: 30px;
+	padding-right: 20px;
+}
+div#side{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+a{
+	color: #CCF;
+}
+a img{
+	border: 0;
+}
+hr{
+	height: 1px;
+	color: #CCF;
+	background-color: #CCF;
+	border: 0px solid #CCF;
+}
+img.photo{
+	border: 10px solid white;
+}
+div.menu{
+	background-color: #147;
+	border-bottom: 1px solid white;
+}
+div.menu h1{
+	margin: 0px;
+	float: left;
+	padding-left: 20px;
+}
+ul.menu{
+	margin: 0px;
+	padding: 10px;
+	display: block;
+	text-align: right;
+}
+ul.menu li{
+	display: inline;
+	padding: 10px;
+}
+a.menu{
+	text-decoration: none;
+	font-weight: bold;
+}
+a.menu:hover{
+	color: white;
+	text-decoration: underline;
+}
+span.last_modified{
+	color: #CCF;
+}
+#download_button{
+background-image: url(../../media/images/147-369-50.gif); background-repeat: repeat-x; background-color: #369; background-position: top; color: white; border: 1px solid #FFF; width: 30%; text-align: center; padding: 20px 0px; width:100%; margin-bottom: 20px;
+}
+#download_button a{
+font-size: 150%; font-weight: bold
+}
+#button_and_screenshot{
+float: right;
+width: 409px;
+padding: 0px 0px 20px 20px;
+}
+
+#manual_toc{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 5px; 
+	border: 1px solid #CCF; 
+	width: 220px;
+	margin: 7px 20px 20px 7px;
+}
+#manual_content{
+/*margin-left: 23%;*/
+}
+#manual_toc ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+#manual_toc li{
+	padding: 3px;
+	margin: 0px;
+}
+#manual_toc li.even{
+	background-color: #258;
+}
+#manual_toc li.odd{
+	background-color: #369;
+}
+.guisubmenu{
+	font-weight: bold;
+}
+.guimenuitem{
+	font-weight: bold;
+	font-style: italic;
+}
+.application{
+	font-weight: bold;
+	font-style: italic;
+}
+.command{
+	font-family: courier;
+	font-weight: bold;
+}
+.interface{
+	font-weight: bold;
+	font-style: italic;
+}
+div.titlepage{
+	margin-top: 50px;
+}
+div.figure{
+	border: 1px solid #CCF; /*#58B;*/
+	padding: 5px;
+}
+div.tip, div.warning{
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	padding: 5px;
+	padding-left: 90px;	
+	border: 3px solid #147;
+	background-color: #258;
+
+}
+div.tip h3, div.warning h3{
+	display: none;
+}
+div.tip{
+	background-image: url(../../media/images/info.png);
+}
+div.warning{
+	background-image: url(../../media/images/important.png);
+}
+h3.title{
+	background-color: #CCF;
+	padding: 5px;
+	color: #369;
+}
+div.authorgroup{
+	padding-left: 20px;
+}
+h4{
+	border-bottom: 1px solid #CCF;
+}
+div#manual_html_link{
+	background-color: #258;
+	padding: 5px;
+	margin: 5px 0px;
+}
+
+</style>
+</head>
+<body>
+<div id="side"><img src="../../media/images/side.jpg" alt="Xiphos Bible" /></div>
+<div class="menu">
+<h1>Xiphos</h1>
+<ul class="menu">
+<li class="menu"><a class="menu" href="../../index.html">Home</a></li> <li class="menu"><a class="menu" href="../../about/index.html">About</a></li> <li class="menu"><a class="menu" href="../../download/index.html">Download</a></li> <li class="menu"><a class="menu" href="../../help/index.html">Help</a></li> <li class="menu"><a class="menu" href="https://xiphos.org/manual/">Documentation</a></li> <li class="menu"><a class="menu" href="../../development/index.html">Development</a></li> <li class="menu"><a class="menu" href="../../links/index.html">Links</a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<div id="content">
+
+<div id="manual_toc">
+<a href="../../index.html"><img src="../../media/images/xiphos_200.png" alt="Xiphos Logo"></a><br />
+<ul>
+
+<li class="odd"><a href="https://xiphos.org/manual/fa/">Xiphos راهنما</a></li>
+
+<li class="even"><a href="xiphos-introduction.html">1. مقدمه</a></li>
+
+<li class="odd"><a href="familiar.html">2. شروع به استفاده از زیفوس</a></li>
+
+<li class="even"><a href="interface.html">3. محیط کاری</a></li>
+
+<li class="odd"><a href="preferences.html">4. Preferences</a></li>
+
+<li class="even"><a href="module-manager.html">5. Module Manager</a></li>
+
+<li class="odd"><a href="search.html">6. The Search Function</a></li>
+
+<li class="even"><a href="studypad.html">7. The Studypad</a></li>
+
+<li class="odd"><a href="personal.html">8. The Personal Commentary</a></li>
+
+<li class="even"><a href="journals.html">9. Journals and Prayer Lists</a></li>
+
+<li class="odd"><a href="onlinehelp.html">10. Getting Help Online</a></li>
+
+<li class="even"><a href="originallanguage.html">11. Original Language Research</a></li>
+
+</ul>
+
+<br/>
+<ul>
+
+
+<li class="odd"><a href="https://xiphos.org/manual/fr/">French</a></li>
+
+
+
+<li class="even"><a href="https://xiphos.org/manual/">English</a></li>
+
+
+
+
+</ul>
+</div>
+<div id="manual_content">
+<hr />
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">8. The Personal Commentary</th></tr><tr><td width="20%" align="right"><a accesskey="p" href="studypad.html">قبلی</a> </td><th width="60%" align="center"> </th><td width="20%" align="left"> <a accesskey="n" href="journals.html">بعدی</a></td></tr></table><hr /></div><div class="sect1" title="8. The Personal Commentary"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="personal"></a>8. The Personal Commentary</h2></div></div></div><p>
+
+		To build up a personal commentary you will need to install the
+
+		editable 'Personal' sword module from the English Commentaries
+
+		section. Right click it and choose
+
+		<span class="guisubmenu">Edit</span> → <span class="guisubmenu">Note</span> → <span class="guimenuitem">Personal</span>
+
+		in the menu.
+
+		</p><p>
+
+		An editor window similar to the
+
+		<span class="guimenuitem">Study Pad</span>
+
+		will appear. Edit your comment and save it; in the future it will
+
+		appear as your comment to the relevant verse.
+
+		</p><div class="figure"><a id="idp7450056"></a><p class="title"><strong>
+
+      شكل 32. The Personal Commentary Editor </strong></p><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="../../media/manual/fa/figures/personal.png" alt="The Personal Commentary" /></div></div></div></div><br class="figure-break" /><p>
+
+		Locationbar
+
+		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p> Synchronise Button</p></li><li class="listitem"><p>Bible Book, Chapter and Verse Selectors</p></li><li class="listitem"><p>Location Summary</p></li></ul></div><p>
+
+		Use the <span class="guimenuitem">Synchronise Button</span> to
+
+		quickly change location of your editor to that of the
+
+		underlying Bibletext or use the
+
+		<span class="guimenuitem">Book</span>,
+
+		<span class="guimenuitem">Chapter</span>, and
+
+		<span class="guimenuitem">Verse</span>
+
+		selectors to choose to edit your comment to one particular
+
+		verse.
+
+		</p><p>Toolbar 1</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Font Size and Environment</p></li><li class="listitem"><p>Font Type</p></li><li class="listitem"><p>Bold, Italics, Underscored, Crossed Out</p></li><li class="listitem"><p>Left, Centre and Right  Bound</p></li><li class="listitem"><p>Shift Paragraph Right or Left</p></li><li class="listitem"><p>Colour Selector</p></li></ul></div><p>Toolbar 2</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p>Save, Delete and Print</p></li><li class="listitem"><p>Cut, Copy, Paste and Undo</p></li><li class="listitem"><p>Find and 'Find and Replace'</p></li><li class="listitem"><p>Spellcheck</p></li></ul></div><p>
+
+		In order for spellcheck to be available, one of the languages
+
+		under <span class="guisubmenu">Edit</span> → <span class="guimenuitem">Current
+
+                languages</span> must be set.
+
+	        </p><p>
+
+		To create a link to other verses right click the text and
+
+		choose <span class="guimenuitem">Link..</span>. In the pop-up window
+
+		enter the link location and the module linked to.
+
+		</p><p>
+
+		It is possible to rename a personal commentary to suit a
+
+		particular subject of study for that commentary.  Thus,
+
+		multiple personal commentaries may be installed: Rename the
+
+		existing personal commentary, and then re-install another
+
+		instance of the personal commentary if desired.  Personal
+
+		commentary names can consist only of letters and digits, and
+
+		cannot duplicate an existing module's name.  Rename is
+
+		accessible off the right-click menu.
+
+		</p><p>
+
+		If the study embodied in a particular personal commentary is
+
+		no longer needed, archival is available in the module manager,
+
+		prior to removal, for possible future re-installation.  See
+
+		the module manager's Remove/Archive page.  Any module may be
+
+		archived, not just personal commentaries.
+
+		</p><p>
+
+		Although there are 31,102 verses in standard versification, it
+
+		is unlikely that more than a tiny fraction of all verses will
+
+		have personal commentary attached to them.  A verse list
+
+		showing where personal commentary notes exist is available
+
+		from <span class="guisubmenu">Right Click</span> → <span class="guimenuitem">
+
+		Dump Pers.Comm.</span>.
+
+		</p><div class="tip" title="نکته" style="margin-right: 0.5in; margin-left: 0.5in;"><h3 class="title">نکته</h3><p>
+
+		The created commentary page will be attached to an individual
+
+		verse only. To write commentary pages from within
+
+		Xiphos, attached to longer stretches of text use the
+
+		<span class="guimenuitem">Link..</span> function to link several
+
+		pages together
+
+		</p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="right"><a accesskey="p" href="studypad.html">قبلی</a> </td><td width="20%" align="center"> </td><td width="40%" align="left"> <a accesskey="n" href="journals.html">بعدی</a></td></tr><tr><td width="40%" align="right" valign="top">7. The Studypad </td><td width="20%" align="center"><a accesskey="h" href="index.html">خانه</a></td><td width="40%" align="left" valign="top"> 9. Journals and Prayer Lists</td></tr></table></div>
+</div>
+
+</div>
+<div id="footer">
+
+
+Copyright © 2000-2020, The Xiphos Developer Team
+</div>
+
+
+</body>
+</html>
+
+
