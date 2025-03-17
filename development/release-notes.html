@@ -112,6 +112,55 @@ padding: 0px 0px 20px 20px;
 XIPHOS RELEASE NOTES
 ____________________
 
+Release 4.3.1
+17 March 2025
+
+- Multi-column display. Default: Prefs -> Sizes/Faces; also in module font ops.
+  For very wide windows on big monitors, following long horizontal rendering
+  can become hard on the eyes. Select 1 to 4 columns.
+- Margin justification, also in Prefs -> Sizes/Faces (app-wide choice only).
+- Stopped .conf "Abbreviation=XYZ" collision with real module [XYZ].
+- Provided a module option to display headings in italic.
+- Huge updates to github workflows.
+  All the credit goes to Greg Hellings.
+- Handle tabs more like browsers, notably tab re-ordering with mouse drag.
+  Many thanks to Nicholas Walkewicz.
+- New Vietnamese interface translation
+  Many thanks to Antoine Đỗ/Giải Ngố.
+- Some other translations have had recent updates.
+  More updates are welcome and solicited for any other languages.
+- Full parallel: Fixed the context menu (morph.seg.).
+- Full parallel: Created a location-fixed top header line for module names.
+  The header no longer scrolls away with verse 1.
+- Build without the editor for platforms no longer supporting gtkhtml.
+- Moved .xiphos to .config/xiphos in accordance with desktop standards.
+  This happens silently for existing users' configurations.
+  Similar Windows, just remove the dot, AppData/Roaming/xiphos.
+- Replaced the Live Chat link (Help menu) to aim at libera.chat.
+- Repaired module display for inconvenient paragraph-end markers under
+  highlight, both general current verse and user annotation.
+- Worked around a WebKit regression that prevented content display for
+  machines with nvidia GPUs (yes, really).
+- Replaced old program choice for external image display with modern element.
+- Provided backward-compatible build support for RHEL9 and other platforms.
+- Fixed the Respect Font Faces module option.
+- Locale renaming: Prefs -> Options, now "System Default."
+- Provided for ESC to close Preferences.
+- Provided keyboard shortcut (Ctrl-S) to toggle sidebar visibility.
+- Provided keyboard shortcuts (Alt-X, Alt-N) to toggle Xrefs, Footnotes.
+- Fixed several string NULL crash bugs.
+- Additions to the languages file for module trees.
+- Resolved build compatibility among several Linux platforms.
+- Moved the appdata file to /usr/share/metainfo, per recent standard.
+- Fixed lack of trailing '/' in <meta> elements.
+- Manual updates to reflect Ctrl-S for sidebar visible toggle and
+  to explain fundamental navigation limitations in full parallel.
+- Windows: Module deletion-induced crash fixed via Sword 1.9.
+- Windows: With Sword 1.9, we no longer depend on patched Sword to handle
+  NTFS' UTF-16 interaction.
+
+________________________________________________________________
+
 Release 4.2.1
 02 May 2020
 
